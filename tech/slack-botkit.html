@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Botkitを使ってSlackのボットを作る - HOLD Web Site</title>
+</head>
+<body>
+<h3>Botkitを使ってSlackのボットを作る</h3>
+<p>
+　「<a href="http://kuma-no-kara-age.hatenablog.com/entry/2016/04/04/015100">エンジニア彼氏に愛想を尽かされた普通のOLでもSlackbotが作れた話 - くまのからあげ</a>」のページを読んで、HubotではなくBotkitでボットを作ってみようと思いました。「<a href="http://qiita.com/icb54615/items/af08862dfaefbf2bbcbe">Slackの新しいフレームワークBotkitを試してみる - Qiita</a>」のページを読むと、まずGitHubからcloneしろ、とあります。しかし、そもそもGitを導入していません←導入しろ。
+</p>
+<pre class="code">
+# yum update
+# yum install git
+# su - stic
+$ git clone git@github.com:howdyai/botkit.git
+</pre>
+<p>
+　ところが最後のコマンドを実行したら、
+</p>
+<pre class="code">
+Initialized empty Git repository in /home/stic/botkit/.git/
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly
+</pre>
+<p>
+　と言われてしまいました。グーグル先生に聞いたら、「自分でcommitしたファイルをローカルリポジトリにcloneできないので対処した」的な話ばかりでNG。結論→以下のコマンドに変えたら、OKでした。
+</p>
+<pre class="code">
+$ git clone git://github.com/howdyai/botkit.git
+</pre>
+<p>
+　続いて、Slackにボットユーザーを追加します……って、そんなチーム持っていません←作れ。とゆーわけで、全然セッションに参加できていない(すみませんスミマセン)TRPGのサークル用チームを作成しました。
+</p><p class="margin">
+<a href="https://my.slack.com/services/new/bot">https://my.slack.com/services/new/bot</a>
+</p><p>
+　上のURLにアクセスしてボットユーザーを作成して、API Tokenをコピーしておきます。
+</p>
+<pre class="code">
+$ cd botkit
+$ token=[コピーしておいたAPI Token] node slack_bot.js
+</pre>
+<p>
+　ところがところが最後のコマンドを実行したら、
+</p>
+<pre class="code">
+module.js:472
+    throw err;
+    ^
+</pre>
+<p>
+　と言われてしまいました。またしてもグーグル先生に泣きついて、以下のページを参考に足りないモジュールを導入します。
+</p><p class="margin">
+<a href="http://qiita.com/kenju/items/5b2fda95be4685a750e1">【Node.js】足りないモジュールをたったの一行でインストールするコマンド - Qiita</a>
+</p><p>
+　導入するには権限が必要なので、rootに戻って、
+</p>
+<pre class="code">
+$ exit
+# npm install -g npm-install-missing
+</pre>
+<p>
+　スクリプトを実行したいユーザーに戻って、
+</p>
+<pre class="code">
+# su - stic
+$ npm-install-missing
+</pre>
+<p>
+　足りないモジュールの導入が終わったら、もう一度……
+</p>
+<pre class="code">
+$ token=[コピーしておいたAPI Token] node slack_bot.js
+</pre>
+<p>
+　ところがところがところが(あなかま)、同じエラーが出てしまいます。
+</p>
+<pre class="code">
+module.js:472
+    throw err;
+    ^
+</pre>
+<p>
+　以下のコマンドをを実行すると、
+</p>
+<pre class="code">
+$ npm-install-missing
+
+Package  Current  Wanted  Latest  Location
+clone      2.0.0   2.0.0   2.1.0  botkit
+jscs      2.11.0  2.11.0   3.0.7  botkit
+mocha      2.5.3   2.5.3   3.2.0  botkit
+should     8.4.0   8.4.0  11.1.2  botkit
+npm-install-missing: No modules seem to be missing.  Huzzah!
+</pre>
+<p>
+　と表示されるので、モジュールは足りているはず……(?_?)。仕方ない(?)ので、よくないんでしょうけど、全部rootで実行してしまいます。
+</p>
+<pre class="code">
+# git clone git://github.com/howdyai/botkit.git
+# npm-install-missing
+# token=[コピーしておいたAPI Token] node slack_bot.js
+</pre>
+<p>
+　Slack上で、ボットユーザー名の左側が緑丸(●)＝有効になりました。お話したいチャンネルに、ボットユーザーを呼びます。
+</p>
+<pre class="code">
+/invite @[ボットユーザー名]
+</pre>
+<p>
+　ボット用スクリプトによりますが、話しかけると反応します。同梱されていたslack_bot.jsを使ってみたので、「@[ボットユーザー名] Hi!」と話しかけたら「Hello.」と返事してくれました……が、スクリプトを少しいじくったら日本語が表示されません。どうやら、UTF-8で書かないといけないみたいです。
+</p><p>
+# 2017/01/07<br />
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

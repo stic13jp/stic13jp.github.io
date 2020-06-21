@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registry Cleaning - HOLD Web Site</title>
+</head>
+<body>
+<h3>レジストリの掃除</h3>
+<p>
+　ここでいう「掃除」とは「再構成」を意味します。レジストリとはなにか/レジストリをどうして掃除するのか等々は、他にサイトがあるのでそちらを参照してください。またレジストリ関連ツールのリスト/紹介も、ここでは行ないません。
+</p>
+<h4>Windows 95/98</h4>
+<p>
+　Windows 95/98のレジストリについては、下記ソフトウェアの存在する「Regist&quot;o&quot;ry Rev.2」のサイトが詳しいです(が、リンク先ドメインが消失してしまいました)。自分はツール派なので、レジストリを一旦書き出してから再構築……なんてことはせず、以下を利用します。
+</p>
+<div class="margin">
+<dl>
+<dt>Registr!p</dt>
+<dd><p>
+　Registr!pは直接レジストリの掃除を行なうツールではなく、レジストリの中身を確認するためのツールです。修復や再構成の機能はないので別のツールが必要になりますが、RegConでエラーが出た場合などにRegistr!pが必要になるときがあります。Windows 95/98専用です。
+</p></dd>
+<dt>RegCon</dt>
+<dd><p>
+　実際にレジストリの再構成を行なうのは、こちらのRegConになります。こちらも、Windows 95/98専用です。両ソフトウェアの「窓の杜」での紹介は、こちら(<a href="http://www.watch.impress.co.jp/pc/docs/article/990924/ols19.htm">鹿山雅志のオンラインソフトつっこみレビュー</a>)。
+</p></dd>
+</dl>
+</div>
+<p>
+　手順は、基本的にRegConを起動して「OK」をクリックするだけ。バックアップを圧縮しなくてもよいのであれば、オプションの「◆バックアップ」で「そのまま」を選択します。
+</p>
+<h4>Windows 2000/XP</h4>
+<p>
+　あちこち見て「RegSeeker」や「EasyCleaner」などを試してみましたが、自分としては以下が合っているようです。
+</p>
+<ol>
+<li>RegCleanerで、不要エントリーを削除</li>
+<li>NTREGOPTで、レジストリを再構築(圧縮)</li>
+</ol>
+<p>
+　どちらも日本語化パッチがあるので、せっかくなので適用しておきます。不要エントリーは、RegCleanerで「N/A」になっているものをガシガシ削除してしまいます。同じくRegCleanerで「ツール」→「レジストリクリーンアップ」→「それらを全て行う」を実行します。次に、NTREGOPTを起動します。こちらは起動すれば処理が自動的に開始されますので、処理が完了したら再起動しておしまいです。
+</p><p>
+　またOSは限定されますが、上記「Regist&quot;o&quot;ry」のサイトにはWindows XPのレジストリ再構成について記述があります(が、リンク先ドメインが消失してしまいました)。
+</p><p>
+# 2006/02/24<br />
+# 2010/05/10　Update<br />
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

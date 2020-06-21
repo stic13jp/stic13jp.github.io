@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YOKUWAKA 30: April, 2006 - HOLD Web Site</title>
+</head>
+<body>
+<h3>YOKUWAKA 30: April, 2006</h3>
+<h4><a id="d11">2006/04/11</a></h4>
+<p>
+　風邪をうつされたらしくて、ノドが大変痛い。セキが出たらマスクしてくれ～。先週は、先月下旬から実家の参号機(EVA-03)がISPに接続できないということで、帰省して対応。なぜかワイヤレスTAとの接続ポートがCOM1からCOM2へ変更されていたことが、原因だった。つーか、COM2からCOM1へ勝手に変更されていたということか。前にも同じことがあったような気が……。週末は、お嫁さんが前から欲しいと言っていた第五世代iPod(iPod video)を購入。そろそろ、色々と環境を一新する時期なのかもしれない。とりあへず実家は、いよいよWAN回線をフレッツISDNからフレッツADSLへ移行する計画を開始。Podcast購読もはじめたことだし、自宅もBフレッツにしようかなあ。
+</p><p>
+　以前実家の初号機(EVA-01)でExplorerが重いと書いていた件だが、参号機(EVA-03)もどうにも重くなってしまったのでVirusScanをUninstallしてみる。弐号機(EVA-02)と同様にAVG Anti-Virus Free Editionへ変更したところ、ウソのように快適になる。とわいえ、どうして快適なのか、そのへんよ～く考えてみよ～だよな。あちこち調べてみると、やはりウィルスの検知率/検出率が低い模様。参号機(EVA-03)の方は結構メールでウィルスが届くようなので、ISPのオプションサービスでウィルスチェックを有効にしておく。AVG Anti-Virus Free EditionにもE-mail Scannerの機能があるので、もちろんそちらも有効にする(つーか、Defaultで有効)。
+</p>
+<h4><a id="d19">2006/04/19</a></h4>
+<p>
+　実家のWAN回線を、フレッツISDNからフレッツADSLエントリー(1Mタイプ)に変更する。NTTから立会いがあった方がよいと言われたので、来てもらう。来てくれたのは、NTT認定の大明(ダイメイ)という会社の人。この会社、後日東京でも見かける。早朝自宅を出発して9:00すぎに実家に着くと、ADSLモデムはまだ段ボールに入ったまま。CMと同じシチュエーションぢゃないんだから。ADSLモデムを接続してリンクアップを待つが、点滅のまま。大明の人が、どこかへ確認しに行く。MDFをいじってきたのか、戻ってきたらリンク確立。ADSL開通は、ものの10分程度で終了してしまった。そして予想通り、このあとが大変だった。
+</p><p>
+　Internet接続確認のために、メルコの無線LANルーター「WHR-HP-AMPG」を接続して弐号機(EVA-02)を起動……すると、なにやら様子がおかしい。なんらかのアクションを行なう度に、エラーのダイアログをバンバン出している。あらゆるモジュールでエラーのダイアログが表示されて、それは「CRVPT32.DLL」だといっている。しかし、そんなファイルは存在しない。初号機(Windows 98)と参号機(Windows 98 SE)で検索しても、やっぱりない。試しに「C*32.DLL」で検索したところ、「CRYPT32.DLL」というファイルがヒットする。このファイル名をGoogleで検索すると、色々と情報があるではないか。もちっと、マトモなフォントを使ってくれ。
+</p><p>
+　んが、「<a href="https://support.microsoft.com/ja-jp/kb/174327">Crypt32.dll のロード中に DLL 初期化エラーが発生する</a>」はWindows NT 4.0の話だろ。「<a href="https://support.microsoft.com/ja-jp/kb/181147">セキュリティで保護された Web ページに接続できない</a>」は、そもそもInternet Explorer自体がマトモに起動しないんだって。「<a href="https://support.microsoft.com/ja-jp/kb/815065">[INFO] DLL とは</a>」も、最初のWindows NT 4.0のことをさしている模様。どうやら、「<a href="https://support.microsoft.com/ja-jp/kb/329115">[MS02-050] 証明書確認の問題により、ID が偽装される</a>」が一番それっぽい。Windows 98用のモジュールをgetして、インストールする。再起動後、エラーのダイアログは表示されなくなった。とゆーわけで、一件落着。でも記録を確認すると、このモジュールって前に適用しているんだけどなぁ。おかしくなったタイミングとしては、2006/04/12のWindows Update適用以後があやしい。Windows Update、コワーイ。
+</p><p>
+　無線LANルーターのRJ-45の口に、弐号機(EVA-02)の有線LANケーブルを接続する。無線LANルーターの設定と同時に、外部のWWWが閲覧できることを確認する。それにしても、速い! ADSL 1Mでも、十分ですな。次に、他のデスクトップPCが接続されているGbEセグメントと無線LAN Ethernet Converterを接続する。参号機(EVA-03)を起動すると……AVGが、ウィルス「Win32/Gaelicum」をDetectする。駆除できないみたいなので隔離したところAVGの実行モジュールが起動できなくなり、パターンファイルのUpdateもできなくなってしまった。隔離すると感染したファイルをmoveしてしまうため、実行ファイルの場合は起動できなくなってしまう模様。
+</p><p>
+　とりあへずすべて隔離して、感染したAVGとAcrobat Readerを再インストールして対処する。ちなみにAVGのサイトでは、「<a href="http://www.grisoft.com/doc/virbase/lng/us/tpl/tpl01?nam=Win32/Gaelicum">AVG Anti Virus: Virus Encyclopedia</a>」のページに詳細が書かれているが、MS03-026って「<a href="https://technet.microsoft.com/library/security/ms03-026">Microsoft Security Bulletin MS03-026</a>」を読むとWindows NTベースの話の模様。でも参号機(EVA-03)のOSは、Windows 98 SEだぞ。後日、次に出た場合は「<a href="http://www.grisoft.com/doc/removal/lng/us/tpl/tpl01?uti=Vcleaner">AVG Anti Virus: Virus Removal Tools</a>」に書かれている&quot;vcleaner.exe&quot;を使うように伝える。次に弐号機(EVA-02)からも無線LANで接続できるようにするため、あえてAOSSを解除して手動で無線LANを設定し直す。そのあとはポータブルHDDをUSB接続して、色々とファイルの整理。USB 1.1、遅すぎだって!
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

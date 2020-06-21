@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hubotを使ってSlackのボットを作る - HOLD Web Site</title>
+</head>
+<body>
+<h3>Hubotを使ってSlackのボットを作る</h3>
+<a id="hubot">
+<h4>Hubot導入編</h4>
+</a>
+<p>
+　Slackのボットを作ってみたくなったんですが、さっぱりわかりません。グーグル先生に聞いたら、Node.jsを使うらしいです。とゆーわけで「<a href="http://qiita.com/akippiko/items/3708016fc43da088021c">centos + node.js + npm + nvm インストール - Qiita</a>」のページを参考に、Node.js諸々を導入します。
+</p><p>
+　まず、Node.jsを導入します。
+</p>
+<pre class="code">
+# yum install epel-release
+# yum install nodejs
+# node -v
+</pre>
+<p>
+　次に、npmを導入します。
+</p>
+<pre class="code">
+# yum install -y npm --enablerepo=epel
+</pre>
+<p>
+　どんどん、導入しちゃいます。
+</p>
+<pre class="code">
+# npm install -g hubot yo generator-hubot coffee-script
+</pre>
+<p>
+　「<a href="http://qiita.com/mochidamochiko/items/29c2d77715d8a1ff062a">SlackのBot(hubot)を作ってみる - Qiita</a>」のページによると、
+</p>
+<blockquote>
+<pre>
+・hubot -> Hubot本体
+・yo -> Yeomanという雛形作成ツール
+・generator-hubot -> YeomanのHubot雛形ジェネレーター
+・coffee-script -> HubotはCoffeeScriptで書く
+</pre>
+</blockquote>
+<p>
+　……だそうです。
+</p>
+　導入がうまくいかないときは、バージョンと導入場所を確認します。具体的には、アップデート/追加導入します。「<a href="http://parashuto.com/rriver/tools/updating-node-js-and-npm">Node.jsとnpmをアップデートする方法 – Rriver</a>」を参考に、まずはNode.jsをアップデートします。
+</p>
+<pre class="code">
+# npm install -g n
+# n --latest
+</pre>
+<p>
+　次に、npmをアップデートします。
+</p>
+<pre class="code">
+# npm update -g npm
+</pre>
+<p>
+　自分の場合は以下のコマンドで、すべてをアップデートしてしまいました。
+</p>
+<pre class="code">
+# npm update -g
+</pre>
+<p>
+　それでも導入がうまくいかないとき(ERRが表示される)は、実行したいユーザーで「npm install」コマンドを実行します。その際、-gオプションは外します。
+</p><p>
+　Hubotの導入が終わったら、ボットを作成します。
+</p>
+<pre class="code">
+# su - stic
+$ mkdir slack_bot
+$ cd slack_bot
+$ yo hubot
+</pre><p>
+　質問に答えていくと、ボットが作成されます。完了したら、動作確認です。
+</p>
+<pre class="code">
+$ bin/hubot
+</pre>
+<p>
+　Enterキーを押してプロンプトが出たら、「ボット名 PING」と話しかけると「PONG」と返事してくれます。
+</p><p>
+　これだけだとつまらないので、追加の動作確認。「CoffeeScript? なにそれ? ミルクと砂糖は入れてね」ぐらい、全然わかっていない状態なので、以下のサンプルスクリプトを使わせてもらいます。
+</p>
+<pre class="code">
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(1337, '[IPアドレス]');
+console.log('Server running at http://[IPアドレス]:1337/');
+</pre>
+<p>
+　[IPアドレス]のところは書き換えます。1337ポートを開けておきます。
+</p>
+<pre class="code">
+$ vi helloworld.js
+</pre>
+<p>
+　上のサンプルスクリプトを書きます。
+</p>
+<pre class="code">
+$ node helloworld.js
+</pre>
+<p>
+　Webブラウザーから http://[IPアドレス]:1337/ へアクセスして、「Hello World」と表示されたらOKです。
+</p>
+<a id="slack">
+<h4>Slack連携編</h4>
+</a>
+<p>
+　ボットを作ったら、Slackと連携させてみましょう。
+</p>
+<ol>
+<li>Slackにアクセスします。</li>
+<li>ボットユーザーを作成します。</li>
+<li>API Tokenをコピーしておきます。</li>
+</ol>
+<p>
+　以下のコマンドを実行します。
+</p>
+<pre class="code">
+$ cd slack_bot
+$ export HUBOT_SLACK_TOKEN=[コピーしておいたAPI Token]
+$ bin/hubot --adapter slack
+</pre>
+<p>
+　Slack上で、ボットユーザー名の左側が緑丸(●)＝有効になったらOKです。
+</p>
+<a id="heroku">
+<h4>Heroku連携編</h4>
+</a>
+<p>
+　その後、色々ありました。
+<p><ol>
+<li>ソースコードをGitHubに載せる。</li>
+<li>実行環境をCentOSからHerokuへ移す。</li>
+<li>実行環境をHerokuからIBM Bluemixへ移す。</li>
+</ol><p>
+　IBM Bluemix上で動作しているSlackのボットを、IBM Bluemix DevOps Servicesからデプロイしようとした……ら失敗して、ボットのプロセスが起動しなくなってしまいました。色々な意味で「いい」タイミングなので「<a href="http://qiita.com/usk/items/3b82df311e4f9694459b">HerokuとCloud9を利用してiPad開発 - Qiita</a>」のページを参考に、Heroku + Cloud9 + GitHubの環境で再構築しました。以下、それぞれのサービスのアカウントは、すでに持っている前提です。
+</p><p>
+　まずは、Cloud9で「Create a new Workspace」します。「Clone from Git or Mercurial URL」は、GitHubのURLを設定します。「Choose a template」は、GitHubからソースコードをCloneしてくるので「Blank」を選択します。そして、Herokuへログインします。
+</p><pre class="code">
+$ heroku login
+</pre><p>
+　必要なかったみたいですが、Gitを作成します。
+</p><pre class="code">
+$ git init
+</pre><p>
+　Herokuのアプリを作成します。
+</p><pre class="code">
+$ heroku create [アプリ名称]
+</pre><p>
+　Gitでコミットしておいて、Herokuへデプロイします。
+</p><pre class="code">
+$ git add .
+$ git commit -m 'Heroku Deploy'
+$ git remote add heroku [HerokuのgitのURL]
+$ git push heroku master
+</pre><p>
+　Slack側で、ボットがアクティブになりません……Slackのボットなので、API Tokenを設定しないといけませんでした。HerokuにWebブラウザーからログインして、該当アプリの「Settings」から「Config Variales」→「Reveal Config Vars」と来て、KEYに「HUBOT_SLACK_TOKEN」を設定して、VALUEにはコピーしておいたAPI Tokenを設定します。右上の「Mores」から「Restart all dynos」を選択すると、Slack側でボットがアクティブになりました。
+</p><p>
+　Cloud9上でコードを追加/編集/削除した場合は、GitHubにも反映させておきます。
+</p><pre class="code">
+$ git remote add github [GitHubのgitのURL]
+$ git push github master
+</pre><p>
+　リンク先記事のように、GitHubにpushされたらHerokuにも自動的にpushしたいです。HerokuにWebブラウザーからログインして、該当アプリの「Deploy」から「Deployment method」→「Connect to GitHub」と来て、GitHubへログインして対象のリポジトリを選択します。自動でデプロイされるように、「Automatic deploys」の「Enable Automatic Deploys」ボタンをクリックして有効にします。
+</p><p>
+　今後は、以下だけでHerokuへアプリが自動的にデプロイされる……はず。
+</p><ol>
+<li>Cloud9でコードを編集する。</li>
+<li>GitHubへpushする。</li>
+</ol>
+<p>
+　最後に、Herokuのアプリが30分でスリープしないように「hubot-heroku-keepalive」を導入します……といっても、Cloud9のbashで以下のコマンドを実行するだけです。
+</p><pre class="code">
+$ heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=$(heroku apps:info -s | grep web-url | cut -d= -f2)
+</pre><p>
+　ところが、なぜかスリープしてしまいます。Webから設定画面で確認したら、VALUEが空でした。アプリのURLは「Open app」で、わかります。これを、KEY「HUBOT_HEROKU_KEEPALIVE_URL」のVALUEに設定します。
+</p>
+<p>
+# 2017/02/28<br />
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

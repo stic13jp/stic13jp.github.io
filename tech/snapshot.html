@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>How to change Snapshot interval - HOLD Web Site</title>
+</head>
+<body>
+<h3>復元ポイントの作成間隔変更</h3>
+<p>
+　Windows Vistaでの話。スタートアップ時と毎日0:00から起動する「システムの復元」用の復元ポイント作成がうざい。ずっとガリガリとディスクへアクセスしていて、まあそのうち待っていれば終わるのだが、そんなに毎日作成しなくてもよい。
+</p><p>
+　とゆーわけで、設定変更。自分は、毎週木曜18:00からにしてみた。遅延時間は一日。
+</p>
+<ol>
+<li>管理ツール→タスク スケジューラを起動</li>
+<li>タスク スケジューラ ライブラリ→Microsoft→Windows→SystemRestoreを展開</li>
+<li>SRのプロパティを表示</li>
+<li>「トリガ」タブの「毎日」と「スタートアップ時」を無効</li>
+<li>「新規」ボタンで、お好みのスケジュールを新しいトリガーとして追加</li>
+</ol>
+<p>
+　Windows XPの場合は、レジストリで設定変更が可能。
+</p><p class="margin">
+<a href="http://www.atmarkit.co.jp/fwin2k/operation/srestore/srestore_01.html">運用：システム・クラッシュからの復活［システムの復元］</a>
+</p><p>
+# 2011/11/13
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

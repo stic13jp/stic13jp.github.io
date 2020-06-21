@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YOKUWAKA 33: November, 2009 - HOLD Web Site</title>
+</head>
+<body>
+<h3>YOKUWAKA 33: November, 2009</h3>
+<h4><a id="d18">2009/11/18</a></h4>
+<p>
+　DVD-RAMメディアの読み込み時に、たまにOSから再起動してしまう件についての続報の続報。たまに発生していて、ブルスクリーンに表示されるのは毎回VirusScan Enterpriseのデバドラ(mfehidk.sys)という点も同じ。DVD-RAMメディア内のルート・ディレクトリを表示しようとしたタイミングで逝っている感じなのだが、表示させない(ウィンドウを開かせない)ようにするには、どうしたらいいんだろうか。ずっとSHIFTキーを押していても、表示してしまうのだが……そもそも表示させなければOKなのかどうかも、わからんのだけど。イベントログ(ID:1003)のエラーから調べてみると、以下のKB(技術情報)がヒットした。
+</p><p class="margin">
+<a href="http://support.microsoft.com/kb/930916/ja">Windows XP ベースのコンピューターで NTFS ファイル システム ボリュームにファイルを開くときにエラー メッセージ:&quot;Stop 0x0000008E&quot;</a>
+</p><p>
+　ところが上記パッチを適用しようとしたら、すでに適用されている模様。正確には、あとから出たサービスパックを含むパッチに包含されているらしい。また以下のリンク先ページによると、Windows XPが出た初期から発生が確認されている。
+</p><p class="margin">
+<a href="http://www.geocities.co.jp/SiliconValley-Cupertino/2443/etc/z14.html">1000008e</a> 100%のエラー
+</p><p>
+　上記リンク先ページによると「ページングファイルなし」にしろ、とある。さすがに、それは怖いので「システム管理サイズ」に変更してみた。これで、またしばらく様子見としたい。
+</p>
+<h4><a id="d21">2009/11/21</a></h4>
+<p>
+　<a href="yk3309.html#d26">とゆーわけ</a>で、アースソフトのPT2を購入した。加えて、以下も入手した。
+</p>
+<ul>
+<li>1mのアンテナケーブル4本 (日本アンテナ製)</li>
+<li>4分配器 (日本アンテナ製)</li>
+<li>カードリーダー(SCM Microsystems製SCR3310)</li>
+<li>青いカード</li>
+</ul>
+<p>
+　4分配ではなく、分波器に2分配器をひとつずつぶら下げるようなかたちがよいことは知ってはいたのだが、まあ大丈夫だろうと根拠なく判断した。HDDの増設も考えたのだが、Seagateのニアライン1TBが18,000円もしていたので、とりあへず保留。2台あるPCのうち、CathyかChobitsか、どちらに導入しようか迷った。Cathyはアナログチューナーが「ふつ～」に動いているので、録画PCとしてはサブ機と化しているChobitsに導入することにした。ソフトウェアまで含めた導入は、「PT2まとめWiki」(コンテンツ消失)に書いてある内容で大体いけるのだが「書いてあることを、そのままやればいい」という感じではない。TVTest.exeで視聴/録画するところまでは簡単だったが、EPGから録画予約を設定しようとして少々つまづく。
+</p>
+<ul>
+<li><a href="http://www.oshiete-kun.net/archives/2008/12/tvpt1.html">デジタルTV放送をパソコンで見たくてPT1買ったけど設定方法がわからん！ :教えて君.net</a></li>
+<li><a href="http://www.oshiete-kun.net/archives/2008/12/pt14.html">PT1で4番組同時録画するにはどうしたらいいの？ :教えて君.net</a></li>
+</ul>
+<p>
+　まず、どのソフトを導入すればよいのか。次に、どのファイルを追加すればよいのか。上記2ページを見て、なんとかOK。しばらくCathyのアナログチューナーと併用して、様子見といくか。
+</p>
+<h4><a id="d23">2009/11/23</a></h4>
+<p>
+　EpgDataCap_BonのEPGが、色分けされていなくて殺風景。観たい番組を探すとき最近色で探すクセがついてしまっているので、色分けがないのは少し困る。とゆーわけで、TvRockを導入してみることにした……のだが、BSデジタルの番組情報だけが取得できない。色々試しているうちに、EpgDataCap_BonのEPGの色分けは単に色分けの設定が有効になっていないだけだったことが判明。ちょー間抜け。外出先からリモートで録画予約を入れる、とかは現在のところ必要ないのでTvRockの設定はあきらめた(をひ)。EPGが色分け表示されればEpgDataCap_Bonで十分ですぜ、旦那←んざそら。後日ネットで見ていると、デフォルトの30分であきらめずに取得時間を長くすればいいらしい。でも、もうEpgDataCap_Bonで行くことにしたので、とりあへずいいです。
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

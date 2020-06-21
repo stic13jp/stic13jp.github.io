@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hubotを使ってTwitterのボットを作る - HOLD Web Site</title>
+</head>
+<body>
+<h3>Hubotを使ってTwitterのボットを作る</h3>
+<a id="hubot">
+<h4>Hubot導入編</h4>
+</a>
+<p>
+　Slackのボットを作ったら、今度はTwitterのボットも作りたくなります。
+「<a href="http://qiita.com/susuwatarin/items/019e0e701754161f7c4c">初心者がHubotを使ってHeroku上で動くSlack bot作ってみた（導入編） - Qiita</a>」のページを参考に「SlackとHerokuを連携する」の直前まで作業していきます。
+</p><p>
+　作業環境は、<a href="https://c9.io/">Cloud9</a>です。Cloud9で「Create a new workspace」します。「Choose a template」は、「Node.js」を選択します。Terminal/bash上で、諸々導入していきます。
+</p>
+<pre class="code">
+$ npm install hubot
+$ npm install yo
+$ npm install generator-hubot
+$ npm install coffee-script
+</pre><p>
+　Hubotの導入が終わったら、ボットを作成します。
+</p>
+<pre class="code">
+$ yo hubot
+</pre><p>
+　必要な情報を入力して、ひな形の完成です。
+</p>
+<a id="github">
+<h4>GitHub連携編</h4>
+</a>
+<p>
+　ソースコードをGitHubに置いておきたいので、GitHub上で新しいリポジトリを作成します。次に、それとCloud9をヒモ付けておきます。
+</p><pre class="code">
+$ git init
+$ git add .
+$ git commit -a -m 'First Commit'
+$ git remote add github [GitHubのURL]
+$ git push github master
+</pre>
+<a id="heroku">
+<h4>Heroku連携編</h4>
+</a>
+<p>
+　Herokuにもデプロイしちゃいます。
+</p>
+<pre class="code">
+$ heroku login
+$ heroku create [アプリ名称]
+$ git push heroku master
+</pre><p>
+　Herokuの「Deploy」にてGitHubのリポジトリと連携させて、「Automatic deploys」を有効にします。
+</p>
+<a id="twitter">
+<h4>Twitter連携編</h4>
+</a>
+<p>
+　ここから先は、「<a href="http://qiita.com/hkusu/items/36ce56f3df4e7a0937cb">Hubot を Twitter の公開タイムラインに住まわせる - Qiita</a>」のページを参考に「Twitter 側でアプリケーション登録」から作業していきます。「Permissions」タブの「Access」は、すでに「Read and Write」になっていました。「Keys and Access Tokens」タブの以下の値を控えておきます。
+</p><ul>
+<li>Consumer Key (API Key)</li>
+<li>Consumer Secret (API Secret)</li>
+<li>Access Token</li>
+<li>Access Token Secret</li>
+</ul>
+<p>
+　以下のHerokuの環境変数に、控えた値を設定します。
+</p><ul>
+<li>HUBOT_TWITTER_KEY</li>
+<li>HUBOT_TWITTER_SECRET</li>
+<li>HUBOT_TWITTER_TOKEN</li>
+<li>HUBOT_TWITTER_TOKEN_SECRET</li>
+</ul>
+<p>
+　Twitter上で動作確認します。
+</p>
+<pre class="code">
+@ruhko_ochi PING
+</pre><p>
+　PONGと返事してくれたので、とりあへず(ママ)OK。
+</p>
+<p>
+# 2017/03/28<br />
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

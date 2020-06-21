@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Setup cursor rate and delay - HOLD Web Site</title>
+</head>
+<body>
+<h3>カーソル速度の設定</h3>
+<p>
+　その昔PC-9801FSを使っていたときに、KEYSPというソフトを常駐させていました。カーソル速度の設定を行なうソフトです。デフォルトの設定ですと、カーソルの速度が遅すぎるんですね。逆に導入した直後はカーソルが行きすぎてしまったりして、まるで切れない包丁を捨てて新しくしたら切れすぎて指まで切っちゃうような感じ。で、KEYSPはPC-9801用MS-DOSのソフトだったので、Windowsでは利用できないわけです。そこでAUTOEXEC.BATに、
+</p>
+<pre class="code">
+mode con rate=32 delay=1 
+</pre>
+<p>
+　と書きます。Windows NT/2000も、互換性維持のため「AUTOEXEC.BAT」を処理します。ただWindows 2000環境では上記の設定を行なわなくても、それほどカーソルのもたつきは感じないですね。
+</p>
+<hr />
+<a href="index.html">Back to Top Page</a>
+</body>
+</html>

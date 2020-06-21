@@ -1,0 +1,232 @@
+------------------
+System Information
+------------------
+Time of this report: 2/25/2001, 22:30:00
+       Machine name: EVA-01
+   Operating System: Microsoft Windows 98 (4.10, Build 1998)   
+           Language: Japanese (Regional Setting: Japanese)
+          Processor: Intel Pentium II,  MMX, 400MHz
+             Memory: 128MB RAM
+          Page File: 71MB used, 577MB available
+    DirectX Version: DirectX 7.0 (4.07.00.0716)
+DX Setup Parameters: /PackageInstall
+     DxDiag Version: 4.07.00.0700
+
+------------------
+DirectX Components
+------------------
+   ddraw.dll: 4.07.00.0700 Japanese Final Retail 9/9/1999 07:00:00 352528 bytes 
+ ddraw16.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 28496 bytes 
+ ddrawex.dll: 4.87.00.0700 English Final Retail 9/9/1999 07:00:00 24336 bytes 
+   ddraw.vxd: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 30469 bytes 
+  ddhelp.exe: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 39184 bytes 
+   dxapi.sys: 4.87.00.0700 English Final Retail 9/9/1999 07:00:00 2416 bytes 
+   d3dim.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 625936 bytes 
+d3dim700.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 673552 bytes 
+  d3dref.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 141584 bytes 
+ d3dramp.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 590096 bytes 
+   d3drm.dll: 4.06.02.0436 English Final Retail 1/8/1999 18:10:00 437008 bytes 
+  d3dxof.dll: 4.06.02.0436 English Final Retail 1/8/1999 18:10:00 107792 bytes 
+d3dpmesh.dll: 4.06.02.0436 English Final Retail 1/8/1999 18:10:00 87312 bytes 
+  dplayx.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 218384 bytes 
+dpmodemx.dll: 4.07.00.0700 Japanese Final Retail 9/9/1999 07:00:00 76560 bytes 
+dpwsockx.dll: 4.07.00.0700 Japanese Final Retail 9/9/1999 07:00:00 65808 bytes 
+dplaysvr.exe: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 29968 bytes 
+  dsound.dll: 4.07.00.0700 Japanese Final Retail 9/9/1999 07:00:00 399120 bytes 
+dsound3d.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 1320208 bytes 
+  dsound.vxd: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 56259 bytes 
+  dinput.dll: 4.07.00.0716 Japanese Final Retail 9/9/1999 07:00:00 633616 bytes 
+  dinput.vxd: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 10874 bytes 
+  joyhid.vxd: 4.87.00.0700 English Final Retail 9/9/1999 07:00:00 12107 bytes 
+     joy.cpl: 4.07.00.0700 Japanese Final Retail 9/9/1999 07:00:00 374032 bytes 
+   gcdef.dll: 4.07.00.0700 Japanese Final Retail 9/9/1999 07:00:00 525072 bytes 
+     pid.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 26384 bytes 
+gameenum.sys: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 10512 bytes 
+ hidgame.sys: 4.07.00.0700 English Final Retail 12/8/1999 07:00:02 8880 bytes 
+  dmusic.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 69392 bytes 
+dmusic16.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 11456 bytes 
+dmusic32.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 13584 bytes 
+  dmband.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 26896 bytes 
+dmcompos.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 49936 bytes 
+   dmime.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 82192 bytes 
+dmloader.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 21264 bytes 
+ dmstyle.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 78096 bytes 
+ dmsynth.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 52496 bytes 
+   dx7vb.dll: 4.07.00.0700 English Final Retail 9/9/1999 07:00:00 605456 bytes 
+
+-------------------
+DirectX Media Files
+-------------------
+actmovie.exe: 6.00.02.0902 Japanese Final Retail 10/12/1998 14:30:44 44304 bytes 
+amstream.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:28:10 67856 bytes 
+   danim.dll: 6.00.04.0827 English Final Retail 9/2/1998 17:28:16 1088272 bytes 
+ devenum.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:28:10 53008 bytes 
+  dxmasf.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:02:00 426768 bytes 
+ dxtmsft.dll: 6.00.02.0827 English Final Retail 8/27/1998 13:51:42 209168 bytes 
+dxtmsft3.dll: 6.00.02.0827 English Final Retail 8/27/1998 13:51:44 182032 bytes 
+ dxtrans.dll: 6.00.02.0827 English Final Retail 8/27/1998 11:17:40 156160 bytes 
+    lmrt.dll: 6.00.04.0827 English Final Retail 9/2/1998 17:28:18 155408 bytes 
+lmrtrend.dll: 6.00.04.0827 English Final Retail 9/2/1998 17:28:18 38160 bytes 
+  mciqtz.drv: 4.00.96.0729 English Final Retail 8/17/1998 18:21:54 11776 bytes 
+mciqtz32.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:02:00 42256 bytes 
+ mpg2splt.ax: 6.00.02.0902 English Final Retail 9/2/1998 17:28:20 66320 bytes 
+mplayer2.exe: 6.00.02.0902 English Final Retail 9/2/1998 17:02:10 109840 bytes 
+   msdxm.ocx: 6.00.02.0902 English Final Retail 9/2/1998 17:02:16 509712 bytes 
+    qcap.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:02:02 155408 bytes 
+    qcut.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:02:02 194320 bytes 
+     qdv.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:02:02 207120 bytes 
+    qdvd.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:02:04 247568 bytes 
+  quartz.dll: 6.00.02.0902 English Final Retail 9/2/1998 17:28:10 746768 bytes 
+  quartz.vxd: 4.00.00.0501 English Final Retail 8/17/1998 18:21:56 5672 bytes 
+ strmdll.dll: 3.01.00.2953 English Final Retail 8/20/1998 19:38:26 217984 bytes 
+ unam4ie.exe: 6.00.02.0902 English Final Retail 9/2/1998 17:28:48 63488 bytes 
+  vidx16.dll: 0.00.00.0000 English Final Retail 8/17/1998 18:21:56 10240 bytes 
+ iac25_32.ax: 2.00.05.0050 English Final Retail 6/12/1998 20:01:02 198656 bytes 
+  ir41_32.ax: 4.31.16.0002 Japanese Final Retail 6/12/1998 20:01:02 857600 bytes 
+ ir41_qc.dll: 0.00.00.0000 English Final Retail 6/12/1998 20:01:02 135168 bytes 
+ir41_qcx.dll: 0.00.00.0000 English Final Retail 6/12/1998 20:01:02 352256 bytes 
+ ir50_32.dll: 5.1026.15.0041 Japanese Final Retail 6/12/1998 20:01:02 753664 bytes 
+ ir50_qc.dll: 5.00.63.0038 English Final Retail 6/12/1998 20:01:02 212992 bytes 
+ir50_qcx.dll: 5.00.64.0038 English Final Retail 6/12/1998 20:01:02 196608 bytes 
+   ivfsrc.ax: 5.03.02.0038 English Final Retail 6/12/1998 20:01:02 139264 bytes 
+  tm20dec.ax: 1.00.00.0001 English Final Retail 8/20/1998 20:02:06 140800 bytes 
+     atl.dll: 2.00.7024.0000 English Final Retail 8/26/1998 23:52:48 20992 bytes 
+  comcat.dll: 5.00.1600.0001 English Final Retail 6/12/1998 20:01:02 16384 bytes 
+  msvcrt.dll: 6.00.8397.0000 English Final Retail 7/29/1998 18:00:06 266293 bytes 
+oleaut32.dll: 2.40.4275.0001 English Final Retail 3/8/1999 12:02:26 598288 bytes 
+olepro32.dll: 5.00.4275.0001 English Final Retail 3/8/1999 12:02:26 164112 bytes 
+  urlmon.dll: 4.72.3612.1706 Japanese Final Retail 3/16/1999 00:00:00 488208 bytes 
+ wininet.dll: 4.72.3612.1700 Japanese Final Retail 3/16/1999 00:00:00 371984 bytes 
+
+---------------
+DirectX Drivers
+---------------
+  cspman.dll: 4.14.00.0001 English Beta Retail 7/28/1998 04:14:00 18512 bytes 
+framebuf.dll: 4.10.00.1998 English Final Retail 6/12/1998 20:01:02 28672 bytes Certified
+framebuf.drv: 4.10.00.1998 English Final Retail 6/12/1998 20:01:02 22192 bytes Certified
+mgallx64.dll: 4.10.01.4260 English Final Retail 10/16/1998 15:31:04 179264 bytes 
+mgapdx64.drv: 4.10.01.4260 English Final Retail 10/16/1998 15:31:54 253216 bytes 
+mgapdx64.vxd: 4.10.01.4260 English Final Retail 10/16/1998 15:32:02 75192 bytes 
+  mgaxdd.drv: 4.10.01.4260 English Final Retail 10/16/1998 15:28:58 37984 bytes 
+  mgaxdd.vxd: 4.10.01.4260 English Final Retail 10/16/1998 15:31:56 18550 bytes 
+mgaxdd32.dll: 4.10.01.4260 English Final Retail 10/16/1998 15:30:44 438272 bytes 
+msanalog.vxd: 4.05.01.1998 English Final Retail 6/12/1998 20:01:02 12101 bytes Certified
+msjstick.drv: 4.05.01.1998 Japanese Final Retail 6/12/1998 20:01:02 2511 bytes Certified
+supervga.drv: 4.00.00.0950 Japanese Final Retail 6/12/1998 20:01:02 52091 bytes Certified
+   tsd32.dll: 1.03.03.0007  Final Retail 6/12/1998 20:01:02 32768 bytes Certified
+     vga.drv: 4.10.00.1998 English Final Retail 6/12/1998 20:01:02 52080 bytes Certified
+   vjoyd.vxd: 4.07.00.0716 English Final Retail 12/8/1999 07:00:02 33764 bytes 
+
+---------------
+Display Devices
+---------------
+        Card name: Matrox Millennium G200 AGP
+     Manufacturer: Matrox Graphics
+        Chip type: MGA - G200 Rev 
+         DAC type: Internal
+        Device ID: Enum\PCI\VEN_102B&DEV_0521&SUBSYS_FF03102B&REV_01\000800
+   Display Memory: 8.0 MB
+     Current Mode: 1152 x 864 (16 bit) (optimal refresh rate)
+          Monitor: SONY CPD-15ES
+  Monitor Max Res: 1280,1024
+      Driver Name: mgapdx64.drv
+   Driver Version: 4.10.01.4260 (English)
+      DDI Version: 6
+Driver Attributes: Final Retail
+ Driver Date/Size: 10/16/1998 15:31:54, 253216 bytes
+ Driver Certified: No
+              VDD: *vdd,*vflatd
+         Mini VDD: mgapdx64.vxd
+         Registry: OK
+DDraw Test Result: 
+  D3D Test Result: 
+
+
+-------------
+Sound Devices
+-------------
+      Description: DirectSound (SB Live! Wave アウト [B800])
+        Device ID: PCI\VEN_1102&DEV_0002&SUBSYS_00201102&REV_04\BUS_00&DEV_0B&FUNC_00
+  Manufacturer ID: 2
+       Product ID: 104
+             Type: VXD
+      Driver Name: EMU10K1.VXD
+   Driver Version: 4.06.00.0711 (English)
+Driver Attributes: Final Retail
+ Driver Certified: No
+    Date and Size: 11/4/1999 01:08:00, 265285 bytes
+      Other Files: emu10k1.vxd
+  Driver Provider: Creative
+   HW Accel Level: Full
+         Registry: OK
+Sound Test Result: 
+
+
+-----------
+DirectMusic
+-----------
+ DLS Path: C:\WINDOWS\system32\drivers\gm.dls
+  Version: 1.00.16.0002
+    Ports:
+           Microsoft Synthesizer, Software (Not Kernel Mode), Output, DLS, Internal, Default Port
+           MIDI Mapper, Hardware (Not Kernel Mode), Output, No DLS, Internal
+           Creative S/W Synth, Hardware (Not Kernel Mode), Output, No DLS, Internal
+           A: SB Live! MIDI シンセ, Hardware (Not Kernel Mode), Output, No DLS, Internal
+           B: SB Live! MIDI シンセ, Hardware (Not Kernel Mode), Output, No DLS, Internal
+           SB Live! MIDI アウト [B800], Hardware (Not Kernel Mode), Output, No DLS, External
+           SB Live! MIDI イン [B800], Hardware (Not Kernel Mode), Input, No DLS, External
+ Registry: OK
+Music Test Result: 
+
+-------------
+Input Devices
+-------------
+      Device Name: Microsoft SideWinder Force Feedback Wheel
+      Driver Name: MSGAME.VXD
+   Driver Version: 3.00.00.0000 (English)
+Driver Attributes: Final Retail
+    Date and Size: 8/7/1998 00:00:00, 19109 bytes
+
+      Device Name: Two axis, two button
+      Driver Name: Default
+   Driver Version:  ()
+Driver Attributes: Final Retail
+    Date and Size: , 0 bytes
+
+         Registry: OK
+
+-------------
+Input Drivers
+-------------
+  Registry Key: msjstick.drv<0001>
+        Active: Yes
+      DeviceID: VIRTUAL\*CTL7010\PCI&VEN_1102&DEV_7002&SUBSYS_00201102&REV_01&BUS_00&DEV_0B&FUNC_01
+Matching DevID: VIRTUAL\*CTL7010
+ 16-bit Driver: msjstick.drv
+ 32-bit Driver: vjoyd.vxd
+
+
+----------------------------
+DirectPlay Service Providers
+----------------------------
+DirectPlay に対するシリアル接続 - Registry: OK, File: dpmodemx.dll (4.07.00.0700)
+DirectPlay に対するモデム接続 - Registry: OK, File: dpmodemx.dll (4.07.00.0700)
+DirectPlay に対する インターネット TCP/IP 接続 - Registry: OK, File: dpwsockx.dll (4.07.00.0700)
+DirectPlay に対する IPX 接続 - Registry: OK, File: dpwsockx.dll (4.07.00.0700)
+DirectPlay Test Result: 
+
+-------------------------
+DirectPlay Lobbyable Apps
+-------------------------
+
+------------------------------------
+Inactive Display Entries in Registry
+------------------------------------
+ None
+
+----------------------------------
+Inactive Sound Entries in Registry
+----------------------------------
+ Card name: Diamond Voice Modem Serial Wave Device
+    Driver: serwvdrv.drv
+

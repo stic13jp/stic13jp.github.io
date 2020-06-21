@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>How to subscribe NetNews in Offline Environment - HOLD Web Site</title>
+</head>
+<body>
+<h3>オフラインでNetNewsを購読する方法</h3>
+<p>
+　常時接続が当然のように普及している現在、このページの存在意義は薄れてしまった感がありますが、サマリーとしてまとめるという行為そのもののお勉強も兼ねて掲載します。初出は「よくわか22」の<a href="../yokuwaka/yk2211.html#d24">11月24日</a>ですが、かなり書き直しています。
+</p><p>
+　そもそも「NetNewsって、なんだ?」という人はこのページを読まないと思うのですが、まずはそこから。
+</p>
+<ul>
+<li><a href="http://www.forest.impress.co.jp/article/1999/02/02/netnews.html">窓の杜 - NetNewsを利用してみよう!</a></li>
+<li>ネットニュースを活用しよう (ページ消失)</li>
+<li><a href="http://www.st.rim.or.jp/~minaka/japan/newuser1.html">超初心者のためのネットニュース入門</a></li>
+</ul>
+<p>
+　とゆーわけで、みなさんNetNewsは読んでいますか? 読んでいるとしたら、どんな方法で読んでいますか? プロバイダーに接続して、直接News Readerを起動しているのでしょうか? それとも専用線経由でTelnet接続して、Shell上でNews Reader(mnewsとか)を起動しているのでしょうか? Windowsユーザーは前者、UNIXユーザーは後者が多いのでは? いまでは後者は少ないと思いますが、どちらの方法もオンラインであること、つまり読み書きしている間はネットワークに接続し続けていることが必要です。
+</p><p>
+　フレッツISDNもテレホーダイさえもなかった頃、ネットワークに接続し続けていることはコストの発生を意味していました。1分あたりン円で、ドンドンおカネが出て行くわけです。そこで、NetNewsをオフラインで読む方法がうまれました。ダイアルアップIP接続したあとnewsサーバーに接続して、購読しているNewsGroupの未読記事を指定した数だけgetします。回線を切断してNews Readerを起動し、ゆっくりと記事を読むのです。私の場合、記事の取り込みはWSNews、購読はWinVN、書き出しはPB Expireを使用しています(cf.<a href="../profile/stic.html">STIC's Profile</a>)。
+</p>
+<div class="margin">
+<dl>
+<dt>WSNews</dt>
+<dd><p>
+　WSNewsはそれ自身でNews Readerとしての機能を備えているのですが、すでにWinVNをNews Readerとして使用して気に入っていました。そこで、WSNewsはSoup形式に記事を格納する機能のためだけ使用しています。気がついたら、Vectorからgetできなくなっていました。とりあへず、当サイトに置いておきます→<a href="https://www.sugarsync.com/pf/D2149163_80914505_603671">WSNews</a>。
+</p></dd>
+<dt>WinVN</dt>
+<dd><p>
+　WinVNは、記事の購読(閲覧・フォロー)用として使用します。私がNetNewsを購読し始めた頃は、そんなに選択肢が多くなかったのです。でもイヤイヤ使っているわけではなく、好みのLook＆Feelです。オフライン版として紹介されているFTPのURLは、現在unreachableのようです。とりあへず、当サイトに置いておきます→<a href="https://www.sugarsync.com/pf/D2149163_80914505_603678">オフライン版WinVN</a>。
+</p></dd>
+<dt>PB Expire</dt>
+<dd><p>
+　<a href="http://www.vector.co.jp/soft/win31/net/se020871.html">PaperBoy</a>もNews Reader単体としての機能を備えていますが、同梱されているPB ExpireだけSoup形式の記事をテキストファイルに書き出すために使用します。テキスト形式で保存しておけば、grep等を使用して検索を楽に行なえるからです。
+</p></dd>
+</dl>
+</div>
+<p>
+　WSNewsとWinVNを組み合わせて使用する方法は「http://www.valley.ne.jp/~sugarway/wsnews/wsnews.htm」にまとまっていたのですが、残念ながらリンク先ページは消失してしまいました。「WSNews + WinVnの設定方法」(http://homepage3.nifty.com/sugarway/wsnews/wsnews.htm)というページもありましたが、@niftyの@homepageが2016/11/10で終了し、なくなってしまいました。
+</p><p>
+　まずWSNewsを導入/設定し、次にWinVNを導入/設定します。どちらもヘルプ/READMEJ.TXTの通りに作業を行なえば、なにも問題ないでしょう。次に、オフライン版WinVNを導入/設定します。オフライン版WinVNに同梱されている、READMEJ.1STに書かれている通りに作業を行ないます。
+</p>
+<ol>
+<li>オフライン版WinVNの入ったアーカイブを解凍して、WINVNJ32.EXEとGSOUP32.DLLを取り出します</li>
+<li>WINVNJ32.EXEをWinVNを導入したディレクトリに、WINVN.EXEとして上書きコピーします</li>
+<li>GSOUP32.DLLをWinVNを導入したディレクトリに、コピーします</li>
+<li>WINVN.INIファイルの[Communications]セクションの「GenSockDLL」エントリを「GSOUP32.DLL」に変更します</li>
+<li>WinVNを起動します</li>
+<li>初回起動時に、GSOUP32.DLLの環境設定を行ないます。InboundディレクトリとOutboundディレクトリを指定します</li>
+</ol>
+<p>
+　GSOUP32.DLLの環境設定は、gwsoup.iniに書かれます。再設定はgwsoup.iniファイルを削除するか、編集します。私の場合、以下のようなエントリーです。
+</p>
+<pre class="code">
+[WSSoup]
+InBound=D:\Internet\WSNews\InBound\
+OutBound=D:\Internet\WSNews\OutBound\
+</pre>
+<p>
+　PB Expireを使用した記事の書き出しについては、「<a href="http://www.b-guild.org/prog/swer.html">ぶらっくぎるどソフトウェア実験室</a>」に紹介があります。PB Expire単体で起動すると設定画面が表示されますので、そこで設定します。PB Expireの動作には、Visual Basic 2.0のランタイム・ライブラリ(VBRJP200.DLL)が必要です。一括削除用のショートカットを作成しておくと、便利です。リンク先のパスは、こんな感じで。
+</p>
+<pre class="code">
+D:\Internet\PaperBoy\PBEXP.EXE D:\Internet\WSNews\inbound\areas
+</pre>
+<p>
+　巡回一回あたりの具体的な手順は、次の通りです。
+</p>
+<ol>
+<li>ダイアルアップIP接続した時点で、WSNewsを起動します。未読記事が、Soup形式でクライアントに格納されます</li>
+<li>処理が終了したら回線を切断して、オフライン版WinVNを起動します</li>
+<li>読み終わったらPB Expireを起動して、古い記事をテキストファイルに書き出します</li>
+</ol>
+<p>
+　これで、おしまい。ちなみにテキストファイルは、1.25MB(PC-9801シリーズを使っていたときの名残(?)です)ずつに区切って、NewsGroupごとの別ディレクトリに保存しています。記事の削除はWinVN上でもテキストファイルに書き出したあとでも、どちらでも。
+</p>
+<hr />
+<p>
+　以下、自分の使い方。とにかくテキストファイルに書き出してしまって、そのファイルを見る方法です。
+</p>
+<ol>
+<li>WinVNを起動して、記事一覧のウィンドウを開きます</li>
+<li>読みたくない記事を選択して、削除してしまいます</li>
+<li>WinVNを終了して、PB Expireを起動します。このとき、Expireの期間を1日にしておきます。Soup形式で格納されている、ほとんどの記事(正確には、1日前までの記事)がテキストファイルに書き出されることになります</li>
+</ol>
+<p>
+　テキストファイルにすると、可搬性が著しく向上します。;-)
+</p><p>
+# 2006/02/16<br />
+# 2017/01/04　Update<br />
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

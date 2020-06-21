@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WZ Editor: Macro ^KD - HOLD Web Site</title>
+</head>
+<body>
+<h3>選択範囲複写マクロ</h3>
+<p>
+　WZ Editor ver4.00Aを使っていたとき、範囲選択時の^KD(行複写)機能の動作がかわっていることに気づきました。何行選択しても、最下行1行分しか複写してくれないのです。10行選択したら、10行複写して欲しいのです。再インストールしても、直りません。ビレセン(Village Center)のTask Listをしらみつぶしに探すと、ありました。でも、ver4.00Bのリリースまで待ちたくないなぁ……と思っていたら、ユーザーがマクロを提供してくれました。助かりました。
+</p>
+<pre class="code">
+CtrlKD
+    {
+        txSetUndispEx(text);
+
+        if (!txSelectGetMode(text))
+        txSelectEx(text, CLIP_PARACUR);
+
+        txPrivatePush(text);
+        txPrivatePop(text);
+
+        txSetDispEx(text);
+    }
+</pre>
+<p>
+　ver4.00Bとver4.00Cでどうだったか正確なところは覚えていないのですが、ver4.00Dの時点では上記の追加設定を行なわなくても大丈夫です。ちなみにver5.02aがすでにリリースされていますが、ver4.0の最終バージョンであるver4.00Feでは拡張オプション(CMDEX)がエラーになってしまうため、私はver4.00Dを使用しています(ver4.00Eは未確認)。設定しているプラグイン・マクロは、拡張オプション ver1.02とXHTML Plug-in ver1.17です。つい最近まではHTMLCMDを使っていましたが、XHTML Plug-inに移行しました。
+</p><p>
+# 2004/09/28
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

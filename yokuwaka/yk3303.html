@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YOKUWAKA 33: March, 2009 - HOLD Web Site</title>
+</head>
+<body>
+<h3>YOKUWAKA 33: March, 2009</h3>
+<h4><a id="d01">2009/03/01</a></h4>
+<p>
+　2月下旬、自宅PC(Chobits)からNAS(LANDISK)へ大きいファイルのコピーをしていると「指定したネットワーク名は使用できません」というダイアログが出てコピーが停止してしまうようになってしまった。こうなってしまうと他のホストへのpingも一切ダメになってしまうので、NASではなくPC(Chobits)側のNICが原因ではなかろうか。とりあへずググってはみたものの、どれも該当しないっぽい。
+</p>
+<ul>
+<li><a href="http://www.atmarkit.co.jp/fwin2k/win2ktips/088directhostedsmb/088directhostedsmb.html">＠IT：Windows TIPS -- Tips：ポート445（ダイレクト・ホスティングSMBサービス）に注意</a></li>
+<li><a href="http://support.microsoft.com/kb/822219/ja">ファイル サーバー上のファイルの操作時に、ファイル サーバーのパフォーマンスが低下し遅延が発生する</a></li>
+</ul>
+<p>
+　GbEスイッチ(I-O.DATA製<a href="http://www.iodata.jp/prod/network/lanadapter/2005/etg2-sh5wh/">ETG2-SH5WH</a>)のポートを変えてもNG、ウィルス対策ソフトをアンインストールしてもNG、でも別PC(Sumomo)とクロスケーブルで接続して数GBのファイルをコピーすると問題なし……とゆーことは、GbEスイッチが原因? 安いプラスチック筐体だったから、熱で逝ってしまったのだろうか。でも、このGbEスイッチのよい点は縦置きができるところなんだよなあ。とはいえ仕方ないので、coregaのGbEスイッチを購入。LEDが前面にありケーブルは後ろに出すタイプ・可能であれば縦置きできるもの、という条件で探した。ところが、このGbEスイッチにしてもChobitsのコピーエラーは解消しない。オンボードLANの方が原因なのか!? あいかわらず、サイズの小さいファイルのコピーはOK。pingもOK。ガーソ。
+</p>
+<h4><a id="d14">2009/03/14</a></h4>
+<p>
+　GbEスイッチがファイルのコピーのエラーの原因ではないのだとしたら(「の」が多い)、PC側のNICがあやしいだろ。てゆーか、一番最初の診断というか予想通りやんけ! さて、それではどこのメーカーのNICを買おうか……昔だったら3Comだが(昔でもIntelだろ、というのは置いといて)、そもそも3Com製GbEのNICなど存在しない。3Comのリテール品自体、もう入手が不可能だ。「石橋を叩いて<strong>渡らない</strong>」人間としては、IntelのNICでせう。M/B(マザーボード)のPCI Express x1のスロットも空いていることだし、PCI版ではなくPCI Express版の「<a href="http://www.intel.com/products/desktop/adapters/gigabit-ct/gigabit-ct-overview.htm">Intel&reg; Gigabit CT Desktop Adapter</a>」をチョイス。サクッと挿して起動すれば、ちょー快適にコピーOK。エラーなんて全然出ません……って、coregaのGbEスイッチどうすんだよ……もう返品できないよね?
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

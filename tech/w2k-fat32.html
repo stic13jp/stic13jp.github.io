@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Can't create over 32GB Partiton (FAT32) in Windows 2000/XP - HOLD Web Site</title>
+</head>
+<body>
+<h3>Windows 2000/XPは32GB以上のFAT32区画を作成できない</h3>
+<p>
+　Windows 2000環境においてFAT32で120GBのHDDを領域確保できなかったので、PartitionMagicを利用しました。初出は「よくわか27」の<a href="../yokuwaka/yk2710.html#d19">10月19日</a>です。
+</p><p>
+　そもそもFAT32で領域確保する人は少ないと思いますが、Windows 2000の場合、NTFSにすると「ごみ箱」フォルダー(Recycler)のアイコンが他のフォルダーと同じものになってしまいます。私は、これがキライなのでFAT32にしています。Windows XPの場合は、「ごみ箱」のアイコンで表示されるみたいです。Explorerのオプションで「保護されたオペレーティング システム ファイルを表示しない(推奨)」のチェックを外さなければよいようなのですが、今度はWindowsディレクトリ以下が触れなくなってしまいます。
+</p><p>
+　とゆーわけで、新しく買ってきた120GBのHDDをFAT32で領域確保しようとしたのですが、なぜかできません。困ったときは、「Windows.FAQ」(リンク切れ)です。調べてみたら、ありました。
+</p>
+<ul>
+<li>Windows 2000/XPは、32GB以上のFAT32区画を作成できません (リンク切れ)</li>
+</ul>
+<p>
+　そこでWindows 98の起動ディスクが手元にあったため、こいつを使おうと思ったのですが、
+</p>
+<ul>
+<li>Windows 9xのfdiskで 64GBを超える容量が正しく扱えないのですが (リンク切れ)</li>
+</ul>
+<p>
+　とゆー情報を発見してしまいました。修正モジュールへのリンクはありますが、Windows 2000環境で実行しても問題ないのか否かがわかりません。とゆーわけで、伝家の宝刀PartitionMagicの登場です。ぢつに簡単に、FAT32区画の拡張領域として確保ができました。いままで使用していたHDDから、データ用Eドライブの中身を移動します。次にEドライブのあった場所に、システム用Cドライブとアプリケーション用Dドライブのサイズを拡張しました。作業自体は支障なかったのですが、時間はえらくかかりましたね。
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CORBA/IIOP - HOLD Web Site</title>
+</head>
+<body>
+<h3>CORBA/IIOP</h3>
+<h4>IIOPとは?</h4>
+<ul>
+<li>Internet Inter-ORB Protocolの略</li>
+<li>OMG(Object Management Group)という業界団体が制定した、分散Object System用のProtocol</li>
+<li>OMGが1995年に発表した、CORBAのversion2の一部</li>
+<li>ORB(Object Request Broker)間のProtocol</li>
+</ul>
+<img src="../image/stjk35.png" width="420" height="185" alt="IIOP" />
+<h4>ORBとは?</h4>
+<ul>
+<li>Object Request Brokerの略</li>
+<li>ClientからのRequestをObjectに仲介する役割を果たす</li>
+</ul>
+<img src="../image/stjk34.png" width="210" height="140" alt="ORB" />
+<h4>ORBにおけるObjectとは?</h4>
+<ul>
+<li>なんらかのRequestに応えて、特定の働きをするSoftwareの単位<br />
+例: MicorosoftのActiveX/OLE</li>
+</ul>
+<h4>CORBAとは?</h4>
+<ul>
+<li>Common ORB Architectureの略</li>
+<li>ORB自体は、各種Platformに依存する(Windows上のOLE)</li>
+<li>CORBAは、あらゆるPlatformに共通なORBの仕様</li>
+</ul>
+<h4>なぜCORBA/IIOPなのか?</h4>
+<ul>
+<li>InternetやIntranet上で、業務や商取引のApplicationを構築する動きが顕著にある</li>
+<li>当初は、HTTP ProtocolとServer上のApplicationを、CGI(Common Gateway Interface)で組み合わせていた<br />
+→思ったほどの性能が出ない等、限界がある</li>
+</ul>
+<h4>HTTPとCGIの組み合わせにおける限界</h4>
+<p>
+　Process生成
+</p>
+<ul>
+<li>CGIでは、ClientからのRequestごとにProcessが起動されるため、ServerのLoad Ave.が高くなる</li>
+<li>CORBA/IIOPでは、一つのProcessで複数のRequestを処理できる</li>
+</ul>
+<p>
+　Server負荷
+</p>
+<ul>
+<li>CGIでは、ClientからのすべてのRequestをWeb Serverが扱うので、一つのServerが性能上のBottleneckになる</li>
+<li>CORBA/IIOPでは、複数のMachineにObjectを配置し、負荷を分散できる</li>
+</ul>
+<p>
+　Data変換
+</p>
+<ul>
+<li>HTTPでは、Text以外のDataは互換性がないため、すべてのDataをHTML形式に変換しなければならない</li>
+<li>CORBA/IIOPでは、他のData型も自動的かつ効率的にMappingする</li>
+</ul>
+<p>
+　Transaction
+</p>
+<ul>
+<li>HTTP(1.0)には、Sessionの概念がない。複数のRequestにまたがるTransactionの管理ができない(Cookieなどの代替手段はある)</li>
+<li>CORBA/IIOPには、Sessionの概念がある</li>
+</ul>
+<p>
+　Network効率
+</p>
+<ul>
+<li>HTTP(1.0)では、RequestごとにTCP Connectionが生成・破棄されるため、Trafficが増加してしまう</li>
+<li>CORBA/IIOPでは、Connectionを維持できるため、Networkの利用効率と応答速度の両面で有利</li>
+</ul>
+<h4>CORBA/IIOPを利用すると?</h4>
+<ul>
+<li>Network上に分散しているObjectが、あたかも自分のMachine上に存在しているかのように利用できる</li>
+<li>Networkに関する部分は、CORBA/IIOP準拠のORBが面倒をみてくれる<br />
+→Socket関数を知らなくてもよい</li>
+<li>Programmerから見えるのは、各Objectが持つ抽象的なInterfaceのみ</li>
+</ul>
+<h4>抽象的なInterfaceとは?</h4>
+<ul>
+<li>IDL(Interface Definition Language)という記述言語で定義される</li>
+<li>IDL Compilerで自動的に翻訳される</li>
+<li>CORBA/IIOPでは、C, C++, Java, COBOL, Ada, SmalltalkをSupportしている</li>
+</ul>
+<h4>IDL Compilerとは?</h4>
+<ul>
+<li>Interfaceの定義を特定のProgramming言語に変換するだけでなく、ORBとのやりとりに必要なModuleも自動生成する</li>
+<li>Programmerは、それらのModule群に含まれる関数を呼び出すことで、自分のProgramをCORBA/IIOP対応にできる</li>
+<li>Javaなら、Client側で5行程度、Object側で10行前後を追加・修正するだけ!</li>
+</ul>
+<img src="../image/stjk36.png" width="482" height="320" alt="IDL" />
+<h4>既存Systemとの統合</h4>
+<ul>
+<li>CORBA/IIOPは、白紙からSystemをつくるのではなく、既存Systemを活用する方に適している</li>
+<li>例えば、Java ClientがNetscape Communicator内のORBを経由してIIOPを使用し、企業のMain Frameで稼動しているCOBOLの在庫管理System内のObjectにAccessする、といったことが可能</li>
+</ul>
+<img src="../image/stjk37.png" width="482" height="310" alt="WWW" />
+<h4>製品の対応</h4>
+<ul>
+<li>1996年中盤に、Netscape社とOracle社が対応</li>
+<li>Netscape Navigatorには、すでに標準でIIOPがSupportされている</li>
+<li>Oracleは、NCA(Network Computing Architecture)にCORBA/IIOPを組み込んだ</li>
+<li>OMGには、IBM, Sun, DEC, HP, Appleなどが加盟している</li>
+</ul>
+<h4>参考</h4>
+<ul>
+<li>「INTERNET magazine」1997/10月号, Internet最新Technology: 第9回(p350)</li>
+<li>OMG　<a href="http://www.omg.org/">http://www.omg.org/</a></li>
+<li>Netscape　<a href="http://www.netscape.com/">http://www.netscape.com/</a></li>
+<li>Oracle　<a href="http://www.oracle.com/">http://www.oracle.com/</a></li>
+<li>Sun　http://developers.sun.com/(リンク切れ)　http://java.sun.com/(リンク切れ)</li>
+</ul>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

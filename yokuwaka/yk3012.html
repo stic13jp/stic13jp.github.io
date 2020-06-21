@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>YOKUWAKA 30: December, 2006 - HOLD Web Site</title>
+</head>
+<body>
+<h3>YOKUWAKA 30: December, 2006</h3>
+<h4><a id="d07">2006/12/07</a></h4>
+<p>
+　先月26日、なにもPC(Cathy)を使用していない状態で突然フリーズが発生した模様。その際、ディスプレイの電源がスリープから復帰したという。前日は、CLIE(PDA)とHotSyncした瞬間にブルースクリーンが表示された。ということは、Palm DesktopのUSBデバイスドライバがいけないのか? でも、これは外せないぞ。アンインストールしてしまったら、CLIE内のデータを、どうやってバックアップしろというのだ。さらに今日は、iTunesにiPodを接続している状態でフリーズ(ブルースクリーン?)したという。先月購入した電源ユニットもあまっているし、Core 2 Duoで別のPCを組み直すかなぁ……。でもデバドラの相性が原因だったら、かわんないのかな?
+</p>
+<h4><a id="d23">2006/12/23</a></h4>
+<p>
+　ディスプレイの電源が切れている状態でのフリーズ(マウスとキーボードを操作しても無反応の状態)が、数日間隔ぐらいの頻度で再発中。QuickTimeの「Direct3Dビデオアクセラレーションを使用」をOFFにしても、「セーフモード(GDIのみ)」にしてもNG。以前のPCでは全然おきていなかったことなので、OSをWindows 2000にしてみたらどうだろうとか考え中、まだWindos 2000のサポート期限は先みたいなので。DOS/V POWER REPORT, 2006/11月号によると、サポート期限は以下の通り。
+</p>
+<table class="border">
+<tr><th class="border">製品名</th><th class="border">製品発売日</th><th class="border">標準サポート期限</th><th class="border">延長サポート期限</th></tr>
+<tr><td class="border">Windows 2000</td><td class="border">2000/03/31</td><td class="border">2005/06/30</td><td class="border">2010/07/13</td></tr>
+<tr><td class="border">Windows XP</td><td class="border">2001/12/31</td><td class="border">Windows Vista発売から2年間</td><td class="border">標準サポート終了後から5年間</td></tr>
+</table>
+<p>
+　とりあへず、Microsoft .NET Frameworkとか導入してみる。そういえば、Office Updateをしていなかった。Security Patchをあてていなかったものがあったが、この辺が原因だったのだろうか……また、しばらく様子を見ないと。
+</p>
+<h4><a id="d31">2006/12/31</a></h4>
+<p>
+　上記の通り、30日深夜＝31日未明にOS変更(Windows XP→Windows 2000)を開始。内蔵HDDは500GBの1ドライブで、以下のようにパーティーションを切ってある。すべて基本領域であったため、そのままWindows 2000の導入を開始する。
+</p>
+<table class="border">
+<tr><th class="border">ドライブ</th><th class="border">サイズ</th><th class="border">用途</th></tr>
+<tr><td class="border">C</td><td class="border">16GB</td><td class="border">システム(OS)</td></tr>
+<tr><td class="border">D</td><td class="border">100GB</td><td class="border">アプリケーション</td></tr>
+<tr><td class="border">E</td><td class="border">残り(350GB?)</td><td class="border">データ</td></tr>
+</table>
+<p>
+　Windows 2000のインストールCD-ROMで導入したところ、Windowsディレクトリが壊れているといわれてしまう。そこでディスケットで導入しようとしたところ、パーティーション情報(ジオメトリ)がおかしい。すべてのパーティーションは基本領域で確保されているため、Cドライブ部分を再確保しても問題ないと思って同じサイズで切り直す。しかし同様にパーティーション情報がおかしいといわれて、導入が最後まで終わらない。Big Driveに対応しているのはWindows 2000 SP3以降ということは認識していたが、あとでSPを上げればDドライブとEドライブは見えるようになると思っていた。イヤな予感がして、Windows XPを導入/設定。
+</p><p>
+　すると、DドライブとEドライブが「正常(不明なパーティーション)」と表示されている。ネットで調べると、MBRのパーティーションテーブルのシステムIDがかわってしまったためらしい。Disk Probeを使って書き換えを試みるが、うまくいかない。データを救出したかったので、PowerX Partition Manager 8 ProをVectorで購入。早速InstallしてシステムIDを書き換えるが、ジオメトリがおかしいという理由でNG。この時点で、救出をあきらめる。もーガク然。とはいえ幸いなことに、リムーバブルHDDに偶然27日のバックアップ(ただしデータの一部のみ)があった。それを戻すが、AL-Mail 32のメールとF1GPの総集編が消えてしまったよ……。
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

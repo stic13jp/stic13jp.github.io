@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>タイムゾーンを変更する方法 - HOLD Web Site</title>
+</head>
+<body>
+<h3>タイムゾーンを変更する方法</h3>
+<h4>CentOS 6編</h4>
+<p>
+　タイムゾーンに関する設定ファイルを指定場所にコピーする、という考え方みたいです。rootになって、以下のコマンドを実行します。
+</p><pre class="code">
+# cp /usr/share/zoneinfo/Japan /etc/localtime
+</pre><p>
+　確認方法は、以下のコマンドを実行します
+</p><pre class="code">
+# date
+</pre><p>
+　JSTになっていたら、OKです。「<a href="http://weblabo.oscasierra.net/centos6-timezone-1/">CentOS 6 のタイムゾーンを変更する手順 | WEB ARCH LABO</a>」を参考にさせてもらいました。
+</p>
+<h4>CentOS 7編</h4>
+<p>
+　コマンドが変更になりました。
+</p><pre class="code">
+# timedatectl set-timezone Asia/Tokyo
+</pre><p>
+　確認方法は、以下のコマンドを実行します
+</p><pre class="code">
+# timedatectl
+</pre><p>
+　JSTになっていたら、OKです。「<a href="https://www.server-world.info/query?os=CentOS_7&p=timezone">CentOS 7 : システムのタイムゾーンを設定する ： Server World</a>」を参考にさせてもらいました。
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

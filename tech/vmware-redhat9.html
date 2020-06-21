@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>How to install Red Hat Linux 9 to VMware 4.0 - HOLD Web Site</title>
+</head>
+<body>
+<h3>VMWare 4.0にRed Hat Linux 9を導入/設定する方法</h3>
+<p>
+　文字通り、<a href="http://www.vmware.com/jp/">VMware</a> 4.0に<a href="http://www.jp.redhat.com/">RedHat</a> Linux 9 (Shrike)を導入/設定する方法です。初出は「よくわか28」の<a href="../yokuwaka/yk2808.html#d13">8月13日</a>です。
+</p><p>
+　最初インストールタイプを「サーバー」にしたら、X Window Systemが入りませんでした。VMware Toolsが設定できないので、rpmコマンドを使って<a href="http://www.xfree86.org/">XFree86</a>をインストールしようとしたのですが、依存関係がよくわからない。色々と試している時間がなかったので、仮想マシンをつくり直してしまいました。今度はインストールタイプを「カスタマイズ」にして、必要と思われるものから必要ぢゃないかもしれないものまで選択。X Windowが起動したので、続いてVMware Toolsのインストール。
+</p>
+<pre class="margin code">
+# cd /
+# mount -t iso9660 /dev/cdrom /mnt
+# cp /mnt/vmware-linux-tools.tar.gz /tmp
+# umount /dev/cdrom
+# cd /tmp
+# tar zxf vmware-linux-tools.tar.gz
+# cd vmware-tools-distrib
+# ./vmware-install.pl
+</pre>
+<p>
+　X Windowsが起動している状態で「vmware-toolbox &amp;」を実行して、起動OK。あとネットワーク・アダプターが起動しなかったのですが、「Red Hat9.0 ゲストでネットワークカードがリンクアップしません」(リンク切れ)を見て解決。今回の環境では「/etc/sysconfig/networking/devices」の下は空だったので、「/etc/sysconfig/network-scripts/ifcfg-eth0」に以下のように書いただけでした。
+</p>
+<pre class="margin code">
+check_link_down ( ) {
+return 1;
+}
+</pre>
+<p>
+　VMware Toolsをインストールしたのは、VMwareの共有フォルダー機能を利用したかったためでした。ホストOSであるWindows 2000環境から、ファイルをゲストOSに渡したかったのです。ところが、Linux上で共有フォルダーがどこにあるのかわからない。とゆーわけで、Sambaクライアントを使うことに変更。Windows上でフォルダーに共有設定を行ない、Linux側から接続します。
+</p>
+<pre class="margin code">
+# smbclient //[コンピュータ名]/[共有名] -U [ユーザー名]
+</pre>
+<p>
+　[ユーザー名]とかは実際の値が入るんですが、[コンピュータ名]については実はIPアドレスを指定しました(hostsファイルに書くのが、面倒くさかっただけ)。接続したあとは、ftpコマンドと同じような感じ。無事、ファイルを移すことができました。
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>

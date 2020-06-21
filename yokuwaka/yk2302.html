@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../normalize.css" rel="stylesheet" type="text/css" />
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YOKUWAKA 23: February, 1999 - HOLD Web Site</title>
+</head>
+<body>
+<h3>YOKUWAKA 23: February, 1999</h3>
+<a id="d01">1999/02/01</a>
+<p>
+　<a href="yk2301.html#d31">と思った</a>けど、WZ EditorのHTML拡張機能オプションHTMLCMD ver1.0を使ってみて、かなりいい感じ。SHIFT + ENTERで&lt;BR&gt;タグを勝手につけないオプションがあれば、ほぼ完璧。エディター本体の部分では、プロファイル機能の無効化はイベントマクロで解決。^QU(大文字小文字変換)および^KZ(全角半角変換)の動作が、Vzのときと違う件も、ユーザーマクロで解決できることが判明。当然、これは設定をVz準拠にしたときの話。さらに、拡張オプションCMDEX ver0.6を使うことによって、プロファイル機能の無効化などを簡単に設定できるようになった。というわけで、ver3.00Dの試し斬り(?)はチャイ。
+</p>
+<a id="d13">1999/02/13</a>
+<p>
+　連続出勤記録が、10日間でとまってしまった……って、身体がもたんっちゅ～に。もはや、古い話となってしまったが、IntelがKatmaiことPentium IIIプロセッサーを発表。KNIって、DirectX ver6.1で対応されているの? なんにしても、いまんとこ買う気なし。モチベーションを感じない。環境再構築の原因となった、Millennium G200のデバドラ、PowerDeskの件。<a href="http://www3.famille.ne.jp/~suna/">Shiba's Homepage</a>によると、ver4.5以降はコアが大幅に変更されているらしいとのこと。Internet Explorerがフリーズするって……あんた……(c)1991,変熊。いまは、ver4.26に戻しています。
+</p>
+<a id="d19">1999/02/19</a>
+<p>
+　ふと気づくと、範囲選択時の^KD(行複写)機能が、かわっている。あせって再インストールしたが状況は、かわらない。WebのTask Listを、しらみつぶしに探す。あった。よかった。でも、ver4.00A α1.31では対応されていない。このままだと、対応はver4.00Bになると考えられる。困った……と思ったら、別のユーザーがマクロを提供してくれた。助かりました。
+</p>
+<pre class="code">
+CtrlKD
+    {
+        txSetUndispEx(text);
+
+        if (!txSelectGetMode(text))
+        txSelectEx(text, CLIP_PARACUR);
+
+        txPrivatePush(text);
+        txPrivatePop(text);
+
+        txSetDispEx(text);
+    }
+</pre>
+<p>
+　ルーラー上に現在の桁位置を示すカーソルがなくなってしまったので、ルーラー表示をOFFにしてみたら、画面が広くなって意外といい感じ。画面といえば、19インチCRT購入計画はとまったまま。それよりも、そろそろ<a href="http://www.ntt-east.co.jp/ISDN/">ISDN</a>か。でも、TAを置く場所がない。ウーハーが置いてある場所を空けるしかないが、ではウーハーは? SONYのスピーカー(SRS-Z750PC)、ついに買っちゃうか!?
+</p>
+<a id="d20">1999/02/20</a>
+<p>
+　MatroxのWebサイトはTop Pageからアクセスすると、目的地までたどりつくのが大変。構成が、ぢつにわかりにくい。<a href="http://www.g200.com/">G200</a>のSiteの方が、いいかも。ところで、ついにWindows版サクラ大戦の(意味のある)情報(リンク切れ)が出始めた。<a href="http://sega.jp/">SEGA</a>のSiteは、役に立たん。さて、何気にCD-Rが欲しい。<a href="../profile/stic.html#eva-00">初号機(EVA-00)</a>には、これ以上ドライブを追加するつもりはないので、零号機か参号機になると思う。前者は空きベイがないので外付、後者は内蔵を予定。後者の場合は、SCSIホストアダプターも調達せねばならん。零号機にGIGAMOの外付ドライブでもつけて、お茶をにごす(?)か。
+</p><p>
+　AUTOEXEC.BATに、
+</p>
+<pre class="code">
+mode con rate=32 delay=1
+</pre>
+<p>
+　と書いたら、その昔、PC-9801FSを使っていたときに、KEYSPをインストールした直後のような感じ。慣れるまで少し時間がかかりそうだが、ちんたらちんたらカーソルが移動するのは、もう耐えられない。話はコロコロかわって、MOだけど、富士通のMCB3064AP(ATAPI)だと税抜44,800円で買えるんだよねえ。こっちにしとくかなあ。バックアップ・ファイルの保存先としてなら、これでもいいんだよねえ。入りきらないのは、分割すればいいだけだもん。あら、よくよく確認したら、3.5インチの空きベイなんて一つもないぢゃん(;_;)。
+</p>
+<a id="d22">1999/02/22</a>
+<p>
+　そうそう。零号機(PC-9821Xa16/W16)のSCSIホストアダプターって、アンフェノール50ピン・ハーフピッチなんだよねえ。現在のSCSI周辺機器って、ほとんどが高密度50ピンだから、変換ケーブルなりアダプターなりを、かまさないといけない。あと、LogitecのLMO-1300は何気に奥行きがあって、ちと気になるんだが。<a href="http://www.watch.impress.co.jp/akiba/">AKIBA PC Hotline!</a> の2/20号には、MITSUMI製のATAPI接続CD-Rドライブが大量に出まわった旨記載されているが、これも考えちゃう。ただし、<a href="http://www.katontech.com/library/vfatbak/vbakexp.html">VFATBAK</a>でバックアップしたアプリケーション用ドライブのデータがCD-Rに収まる容量をそろそろ超えそうなのと、読み書きが随時可能なメディアの方がいいというのもある。
+</p><p>
+　WZの方はver4.00A α1.33になって、オートフォーマットを無効化するとあらゆるHTML入力支援機能がOFFになるようになった。私の望む機能が実現したわけだ……が、SHIFT + ENTERでは&lt;BR&gt;を、CTRL + ENTERでは&lt;P&gt;と&lt;/P&gt;を対で入力してくれる機能って、なかなかよさそう←をひ。オートフォーマットを無効化しない状態では単なるENTERも&lt;BR&gt;を入れてくれて困ったちゃんなのだが、HTMLCMDをインストールすることによって解決できることは、すでに書いた通り。そんなわけで、ver4.00A α1.33の段階で個人的には使いものになったかな、という感じ。やれやれ。
+</p>
+<a id="d27">1999/02/27</a>
+<p>
+　初号機(EVA-01)の起動時、たまに内蔵モデム(SupraMax 56i PCI)が「Wave Device for Voice Modem」のデバドラが入っていねえぞ、と言ってくる。ちゃんと入っているのでキャンセルして、ねんのために再起動するのだが(再起動時には何も言ってこない)、これって何が原因なんですかね。PCIスロットに、カードがちゃんとささっていないのかな。そんなこんなで、<a href="http://www.iodata.co.jp/">I-O DATA</a>のIFML-560/PCIにひかれちう。んが、弟が帰ってきたのでISDN化の方が優先。<a href="http://aterm.cplaza.ne.jp/">Aterm</a>ワイヤレスセットを買ってくるか～。でも、これだけだと足りないんだよなあ。置く場所がががが……。
+</p><p>
+　アメリカではインターネットを国家戦略のひとつとして位置付けているのに、かたや日本では「新しいもの」にすぎす、それに対して保守派が抵抗するという旧態依然の状態にある。その中で、小渕総理のペタネット発言は注目に値した。経済戦略会議の最終報告は実践しないことには意味がないが、政権発足時の期待度限りなくゼロもしくはマイナスといった状態から比較すると、いい意味で期待外れの政権であった(過去形かい)といえなくないだろうか。そもそも、いまだに小渕政権が存続していること自体が期待外れ!?
+</p><p>
+　WZ Editorは、ver4.00<strong>A</strong>がリリース。しばらく、こいつを使ってみましょう。う～ん、IBMのCrossPadが欲しい。でも、62,800円って高いよなあ。PCとの接続がシリアルポート経由というのも、考えちゃう。USBにしようぜ。話はコロコロかわって、「DVD Q&amp;A Station」が閉鎖されてしまった。あらあら。というわけで、「GO! GO!! DVD!!」(リンク切れ)へ行く。をを! <a href="http://www.iris.dti.ne.jp/~a-kaneko/">WebLink</a>が、いい感じ。<a href="http://www.toyota.ne.jp/~kawauso/web/">FTP Exchange</a>は私には合わなかったので、ずっと<a href="http://www.ftpx.com/">FTP Explorer</a>を使っていて、最近、<a href="http://www.vector.co.jp/soft/win95/net/se093556.html">LinkSonar</a>を入れたばかりなのだが、こっちの方がずっといい。ただしダイアルアップ接続のせいなのか、かなり遅い。
+</p>
+<hr />
+<a href="../index.html">Back to Top Page</a><br /><br />
+</body>
+</html>
