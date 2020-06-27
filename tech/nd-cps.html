@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<link href="../normalize.css" rel="stylesheet" type="text/css" />
 <link href="../default.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="../favicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -11,29 +10,29 @@
 <body>
 <h3>Citrix XenApp環境におけるNotes/Domino</h3>
 <p>
-　CPS(Citrix Presentation Server)/Citrix XenApp環境におけるNotes/Dominoについて、まとめてみました。
+　CPS(Citrix Presentation Server)/Citrix XenApp環境におけるNotes/Dominoの技術情報について、まとめてみました……が気がついたら、ほとんどがリンク切れになっていました。IBMがNotes/DominoをHCLへ売却したので当然といえば、そうなのですががが。
 </p>
 <ul>
-<li><a href="https://www-304.ibm.com/support/docview.wss?q1=ibm&rs=923&uid=swg21465697&context=SWD00&cs=utf-8&lang=ja&loc=ja_JP">Knowledge Collection: Lotus 製品の Citrix サポートについて</a></li>
-<li><a href="http://www-1.ibm.com/support/docview.wss?rs=899&uid=swg21098489">Supported configurations and support policy for Citrix products</a> →上記の詳細情報</li>
-<li><a href="http://www-1.ibm.com/support/docview.wss?uid=swg21138029">Multi-user Notes client install on Terminal Services not working as expected</a> →Terminal Service環境へのマルチユーザーインストールはサポート対象外[リンク切れ]</li>
-<li><a href="https://www-304.ibm.com/support/docview.wss?uid=swg21464506">IBM (参考)ターミナルサービス上に Lotus Notes クライアントをマルチユーザーインストールすると意図したとおりに動作しない</a> →上記の日本語情報。回避策あり</li>
-<li><a href="http://www-304.ibm.com/support/docview.wss?uid=swg21463693">IBM (参考)Lotus Notesクライアントの複数ユーザー設定をインストールする際に、データディレクトリの場所を指定することができない - Japan</a> →CPS/Citrix XenAppと直接関係ないけど、マルチユーザー環境でのデータディレクトリ指定方法</li>
-<li><a href="https://www-304.ibm.com/support/docview.wss?uid=swg21464489">IBM (参考)Citrix環境でのLotus Notesクライアントのアップグレード手順</a></li>
-<li><a href="http://www-1.ibm.com/support/docview.wss?rs=475&uid=swg21202109&ca=lsnot">IBM Basic steps for installing Lotus Notes 6 or Notes 7 on a Citrix MetaFrame server - United States</a> →CPSへのNotesクライアント導入手順(IBM版)[英語]</li>
-<li><a href="http://www-01.ibm.com/support/docview.wss?uid=swg21466555">IBM (参考)Citrix MetaFrame サーバー上に Lotus Notes 6 または Lotus Notes 7 をインストールするための基本ステップ</a> →CPSへのNotesクライアント導入手順(IBM版)[日本語]</li>
-<li><a href="http://support.citrix.com/article/ctx112963">CTX112963 - How to Install Version 7.0 of the IBM Lotus Notes Client on Presentation Server 4.5 - Citrix Knowledge Center</a> →CPSへのNotesクライアント導入手順(Citrix版)</li>
-<li><a href="http://www-304.ibm.com/support/docview.wss?uid=swg21462990">IBM (参考)Citrix XenApp (Presentation Server)上にLotus Notes 8.0.xおよび8.5 をインストールするためのステップ - Japan</a>→8.5.1<strong>未満</strong>の導入手順</li>
-<li><a href="http://www-01.ibm.com/support/docview.wss?uid=swg21466461">IBM (参考)Lotus Notes 8.5.1をCitrix XenApp 5にインストールする手順</a>→8.5.1<strong>以降</strong>の導入手順</li>
-<li><a href="https://www-304.ibm.com/support/docview.wss?uid=swg21463380">IBM METAFRAME サーバー上の Lotus Notes クライアントを実行するとインターフェースがすべて英語になる</a> →既知(周知?)の障害情報</li>
-<li><a href="http://www.ibm.com/developerworks/lotus/documentation/notes/d-ls-notesxenapp/">IBM Lotus Notes 8.0.2 on Citrix XenApp 4.5: A scalability analysis</a> →キャパプラ/サイジング。リンク先にPDF</li>
-<li><a href="http://www-01.ibm.com/support/docview.wss?uid=swg21314211">IBM Lotus Notes scalability in a Citrix Presentation Server (ZenApp) 4.5 environment</a> →キャパプラ/サイジングその弐。NotesクライアントBasic版は、1ユーザーあたり75MBのメモリ</li>
-<li><a href="https://www-304.ibm.com/support/docview.wss?rs=463&uid=swg21430323">IBM Steps for installing and configuring Notes 8.5.1 & 8.5.2 on Citrix XenApp 5 - United States</a> →8.5.1と8.5.2の導入手順。リンク先にPDF</li>
-<li><a href="http://www-01.ibm.com/support/docview.wss?uid=swg21273848">IBM Knowledge Collection: Troubleshooting Lotus Notes on Citrix environments</a> →リンク集</li>
-<li><a href="https://www-304.ibm.com/support/docview.wss?q1=ibm&rs=923&uid=swg21507157&context=SWD00&cs=utf-8&lang=ja&loc=ja_JP">IBM (参考) Citrix サーバーでの Lotus Notes 8.5.1 のクラッシュ - Japan</a> →Microsoftから修正パッチの提供あり</li>
+<li>Knowledge Collection: Lotus 製品の Citrix サポートについて<br />→[リンク切れ]</li>
+<li>Supported configurations and support policy for Citrix products<br />→上記の詳細情報[リンク切れ]</li>
+<li>Multi-user Notes client install on Terminal Services not working as expected<br />→Terminal Service環境へのマルチユーザーインストールはサポート対象外[リンク切れ]</li>
+<li>IBM (参考)ターミナルサービス上に Lotus Notes クライアントをマルチユーザーインストールすると意図したとおりに動作しない<br />→上記の日本語情報。回避策あり[リンク切れ]</li>
+<li>IBM (参考)Lotus Notesクライアントの複数ユーザー設定をインストールする際に、データディレクトリの場所を指定することができない - Japan<br />→CPS/Citrix XenAppと直接関係ないけど、マルチユーザー環境でのデータディレクトリ指定方法[リンク切れ]</li>
+<li>IBM (参考)Citrix環境でのLotus Notesクライアントのアップグレード手順<br />→[リンク切れ]</li>
+<li>IBM Basic steps for installing Lotus Notes 6 or Notes 7 on a Citrix MetaFrame server - United States<br />→CPSへのNotesクライアント導入手順(IBM版)[リンク切れ]</li>
+<li>IBM (参考)Citrix MetaFrame サーバー上に Lotus Notes 6 または Lotus Notes 7 をインストールするための基本ステップ<br />→CPSへのNotesクライアント導入手順(IBM版)[リンク切れ]</li>
+<li>CTX112963 - How to Install Version 7.0 of the IBM Lotus Notes Client on Presentation Server 4.5 - Citrix Knowledge Center<br />→CPSへのNotesクライアント導入手順(Citrix版)[リンク切れ]</li>
+<li>IBM (参考)Citrix XenApp (Presentation Server)上にLotus Notes 8.0.xおよび8.5 をインストールするためのステップ - Japan<br />→8.5.1未満の導入手順[リンク切れ]</li>
+<li>IBM (参考)Lotus Notes 8.5.1をCitrix XenApp 5にインストールする手順<br />→8.5.1以降の導入手順[リンク切れ]</li>
+<li>IBM METAFRAME サーバー上の Lotus Notes クライアントを実行するとインターフェースがすべて英語になる<br />→既知(周知?)の障害情報[リンク切れ]</li>
+<li><a href="http://www.ibm.com/developerworks/lotus/documentation/notes/d-ls-notesxenapp/">IBM Lotus Notes 8.0.2 on Citrix XenApp 4.5: A scalability analysis</a><br />→キャパプラ/サイジング。リンク先にPDF</li>
+<li>IBM Lotus Notes scalability in a Citrix Presentation Server (ZenApp) 4.5 environment<br />→キャパプラ/サイジングその弐。NotesクライアントBasic版の場合、1ユーザーあたり75MBのメモリが推奨[リンク切れ]</li>
+<li>IBM Steps for installing and configuring Notes 8.5.1 & 8.5.2 on Citrix XenApp 5 - United States<br />→8.5.1と8.5.2の導入手順。リンク先にPDF[リンク切れ]</li>
+<li>IBM Knowledge Collection: Troubleshooting Lotus Notes on Citrix environments<br />→リンク集[リンク切れ]</li>
+<li>IBM (参考) Citrix サーバーでの Lotus Notes 8.5.1 のクラッシュ - Japan<br />→Microsoftから修正パッチの提供あり[リンク切れ]</li>
 </ul>
 <p>
-# 2012/08/03
+# 2020/06/27
 </p>
 <hr />
 <a href="../index.html">Back to Top Page</a>
