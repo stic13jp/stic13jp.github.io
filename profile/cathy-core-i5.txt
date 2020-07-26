@@ -1,7 +1,0 @@
-2019/01、TrackMan Wheel (ST-65UPi)からMX ERGOへチェンジ。2020/05、コロナウィルスを計算機で殴るためFolding＠Homeに復帰。
-
-
-P/S　Owltech Seasonic SS-660XP2
-KEYBOARD     IBM KB-8920 (109 Japanese Keyboard) P/N: 07H0704
-TRACKBALL    Logicool MX ERGO
-
