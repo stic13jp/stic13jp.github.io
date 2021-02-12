@@ -2,11 +2,11 @@
 /*
 Title: default.css - HOLD Web Site
 Author: STIC <stic@yk.rim.or.jp>
-Update: 2021/02/11
+Update: 2021/02/12
 */
 body {
 	background-color: #ffffff;
-	font-family: 'Noto Sans JP', Meiryo, sans-serif;
+	font-family: Meiryo, sans-serif;
 	color: #000000;
 	width: 80%;
 	margin: 1em auto;
