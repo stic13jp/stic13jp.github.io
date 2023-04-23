@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<link href="../normalize.css" rel="stylesheet" type="text/css" />
 <link href="../default.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="../favicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -47,12 +46,12 @@
 　まずWSNewsを導入/設定し、次にWinVNを導入/設定します。どちらもヘルプ/READMEJ.TXTの通りに作業を行なえば、なにも問題ないでしょう。次に、オフライン版WinVNを導入/設定します。オフライン版WinVNに同梱されている、READMEJ.1STに書かれている通りに作業を行ないます。
 </p>
 <ol>
-<li>オフライン版WinVNの入ったアーカイブを解凍して、WINVNJ32.EXEとGSOUP32.DLLを取り出します</li>
-<li>WINVNJ32.EXEをWinVNを導入したディレクトリに、WINVN.EXEとして上書きコピーします</li>
-<li>GSOUP32.DLLをWinVNを導入したディレクトリに、コピーします</li>
-<li>WINVN.INIファイルの[Communications]セクションの「GenSockDLL」エントリを「GSOUP32.DLL」に変更します</li>
-<li>WinVNを起動します</li>
-<li>初回起動時に、GSOUP32.DLLの環境設定を行ないます。InboundディレクトリとOutboundディレクトリを指定します</li>
+<li>オフライン版WinVNの入ったアーカイブを解凍して、WINVNJ32.EXEとGSOUP32.DLLを取り出します。</li>
+<li>WINVNJ32.EXEをWinVNを導入したディレクトリに、WINVN.EXEとして上書きコピーします。</li>
+<li>GSOUP32.DLLをWinVNを導入したディレクトリに、コピーします。</li>
+<li>WINVN.INIファイルの[Communications]セクションの「GenSockDLL」エントリを「GSOUP32.DLL」に変更します。</li>
+<li>WinVNを起動します。</li>
+<li>初回起動時に、GSOUP32.DLLの環境設定を行ないます。InboundディレクトリとOutboundディレクトリを指定します。</li>
 </ol>
 <p>
 　GSOUP32.DLLの環境設定は、gwsoup.iniに書かれます。再設定はgwsoup.iniファイルを削除するか、編集します。私の場合、以下のようなエントリーです。
@@ -63,7 +62,7 @@ InBound=D:\Internet\WSNews\InBound\
 OutBound=D:\Internet\WSNews\OutBound\
 </pre>
 <p>
-　PB Expireを使用した記事の書き出しについては、「<a href="http://www.b-guild.org/prog/swer.html">ぶらっくぎるどソフトウェア実験室</a>」に紹介があります。PB Expire単体で起動すると設定画面が表示されますので、そこで設定します。PB Expireの動作には、Visual Basic 2.0のランタイム・ライブラリ(VBRJP200.DLL)が必要です。一括削除用のショートカットを作成しておくと、便利です。リンク先のパスは、こんな感じで。
+　PB Expireを使用した記事の書き出しについては、「<a href="http://www.b-guild.org/prog/swer.html">ぶらっくぎるどソフトウェア実験室</a>」(2023/04/23現在、ERR_CONNECTION_TIMED_OUT)に紹介があります。PB Expire単体で起動すると設定画面が表示されますので、そこで設定します。PB Expireの動作には、Visual Basic 2.0のランタイム・ライブラリ(VBRJP200.DLL)が必要です。一括削除用のショートカットを作成しておくと、便利です。リンク先のパスは、こんな感じで。
 </p>
 <pre class="code">
 D:\Internet\PaperBoy\PBEXP.EXE D:\Internet\WSNews\inbound\areas
@@ -72,9 +71,9 @@ D:\Internet\PaperBoy\PBEXP.EXE D:\Internet\WSNews\inbound\areas
 　巡回一回あたりの具体的な手順は、次の通りです。
 </p>
 <ol>
-<li>ダイアルアップIP接続した時点で、WSNewsを起動します。未読記事が、Soup形式でクライアントに格納されます</li>
-<li>処理が終了したら回線を切断して、オフライン版WinVNを起動します</li>
-<li>読み終わったらPB Expireを起動して、古い記事をテキストファイルに書き出します</li>
+<li>ダイアルアップIP接続した時点で、WSNewsを起動します。未読記事が、Soup形式でクライアントに格納されます。</li>
+<li>処理が終了したら回線を切断して、オフライン版WinVNを起動します。</li>
+<li>読み終わったらPB Expireを起動して、古い記事をテキストファイルに書き出します。</li>
 </ol>
 <p>
 　これで、おしまい。ちなみにテキストファイルは、1.25MB(PC-9801シリーズを使っていたときの名残(?)です)ずつに区切って、NewsGroupごとの別ディレクトリに保存しています。記事の削除はWinVN上でもテキストファイルに書き出したあとでも、どちらでも。
@@ -84,15 +83,16 @@ D:\Internet\PaperBoy\PBEXP.EXE D:\Internet\WSNews\inbound\areas
 　以下、自分の使い方。とにかくテキストファイルに書き出してしまって、そのファイルを見る方法です。
 </p>
 <ol>
-<li>WinVNを起動して、記事一覧のウィンドウを開きます</li>
-<li>読みたくない記事を選択して、削除してしまいます</li>
-<li>WinVNを終了して、PB Expireを起動します。このとき、Expireの期間を1日にしておきます。Soup形式で格納されている、ほとんどの記事(正確には、1日前までの記事)がテキストファイルに書き出されることになります</li>
+<li>WinVNを起動して、記事一覧のウィンドウを開きます。</li>
+<li>読みたくない記事を選択して、削除してしまいます。</li>
+<li>WinVNを終了して、PB Expireを起動します。このとき、Expireの期間を1日にしておきます。Soup形式で格納されている、ほとんどの記事(正確には、1日前までの記事)がテキストファイルに書き出されることになります。</li>
 </ol>
 <p>
 　テキストファイルにすると、可搬性が著しく向上します。;-)
 </p><p>
 # 2006/02/16<br />
 # 2017/01/04　Update<br />
+# 2023/04/23　Update<br />
 </p>
 <hr />
 <a href="../index.html">Back to Top Page</a>
