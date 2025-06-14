@@ -2,12 +2,13 @@
 /*
 Title: default.css - HOLD Web Site
 Author: STIC <stic@yk.rim.or.jp>
-Update: 2025/06/10
+Update: 2025/06/14
 */
 body {
 	background-color: #ffffff;
-	font-family: Hiragino Maru Gothic Pro, BIZ UDGothic, Roboto, HelveticaNeue, Arial, sans-serif;
+	font-family: "Hiragino Maru Gothic Pro", "BIZ UDGothic", Roboto, HelveticaNeue, Arial, sans-serif;
 /*	font-family: sans-serif; */
+    font-size: 0.9em;
 	color: #000000;
 	width: 80%;
 	margin: 1em auto;
@@ -46,9 +47,8 @@ img.right {
 	float: right;
 }
 pre {
-	font-family: BIZ UDGothic, monospace;
+	font-family: "BIZ UDGothic", monospace;
 /*	font-family: monospace, monospace; */
-    font-size: 1em;
 	white-space: pre-wrap;
 	overflow: hidden;
 }
@@ -87,7 +87,8 @@ td.nowrap {
 }
 .code {
 	background-color: #dcdcdc;
-	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	font-family: Consolas, "BIZ UDGothic", 'Courier New', Courier, Monaco, monospace;
+    font-size: 0.9em; 
 	margin-left: 2em;
 	margin-right: 2em;
 	padding: 0.25em 0.25em 0.25em 0.25em;
