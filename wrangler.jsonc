@@ -3,6 +3,6 @@
 	"compatibility_date": "2025-12-05",
 	"main": "./index.html",
 	"assets": {
-	"directory": "./yokuwaka"
+	"directory": "/"
 	}
 }
