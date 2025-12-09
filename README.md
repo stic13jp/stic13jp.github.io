@@ -9,3 +9,7 @@
 # HOLD Web Site (GitHub Pages)
 
 [HOLD Web Site (GitHub Pages)](https://stic13jp.github.io/ "HOLD Web Site (GitHub Pages)")
+
+# HOLD Web Site (Cloudflare Pages)
+
+[HOLD Web Site (Cloudflare Pages)](https://stic13jp.pages.dev/ "HOLD Web Site (Cloudflare Pages)")
