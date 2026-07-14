@@ -14,11 +14,13 @@
 <p>
 　DVD-RAMメディアの読み込み時に、たまにOSから再起動してしまう件についての続報の続報。たまに発生していて、ブルスクリーンに表示されるのは毎回VirusScan Enterpriseのデバドラ(mfehidk.sys)という点も同じ。DVD-RAMメディア内のルート・ディレクトリを表示しようとしたタイミングで逝っている感じなのだが、表示させない(ウィンドウを開かせない)ようにするには、どうしたらいいんだろうか。ずっとSHIFTキーを押していても、表示してしまうのだが……そもそも表示させなければOKなのかどうかも、わからんのだけど。イベントログ(ID:1003)のエラーから調べてみると、以下のKB(技術情報)がヒットした。
 </p><p class="margin">
-<a href="http://support.microsoft.com/kb/930916/ja">Windows XP ベースのコンピューターで NTFS ファイル システム ボリュームにファイルを開くときにエラー メッセージ:&quot;Stop 0x0000008E&quot;</a>
+Windows XP ベースのコンピューターで NTFS ファイル システム ボリュームにファイルを開くときにエラー メッセージ:&quot;Stop 0x0000008E&quot;<br />
+http://support.microsoft.com/kb/930916/ja (リンク切れ)
 </p><p>
 　ところが上記パッチを適用しようとしたら、すでに適用されている模様。正確には、あとから出たサービスパックを含むパッチに包含されているらしい。また以下のリンク先ページによると、Windows XPが出た初期から発生が確認されている。
 </p><p class="margin">
-<a href="http://www.geocities.co.jp/SiliconValley-Cupertino/2443/etc/z14.html">1000008e</a> 100%のエラー
+1000008e 100%のエラー<br />
+http://www.geocities.co.jp/SiliconValley-Cupertino/2443/etc/z14.html (リンク切れ)
 </p><p>
 　上記リンク先ページによると「ページングファイルなし」にしろ、とある。さすがに、それは怖いので「システム管理サイズ」に変更してみた。これで、またしばらく様子見としたい。
 </p>
