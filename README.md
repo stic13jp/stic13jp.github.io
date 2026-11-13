@@ -1,10 +1,10 @@
 # HOLD Web Site
 
-[HOLD Web Site](http://www.yk.rim.or.jp/~stic/ "HOLD Web Site")
+[HOLD Web Site (Original)](http://www.yk.rim.or.jp/~stic/ "HOLD Web Site (Original)")
 
 # HOLD Blog Site
 
-[HOLD Blog Site](http://blog.livedoor.jp/stic/ "HOLD Blog Site")
+[HOLD Blog Site](https://stic.livedoor.blog/ "HOLD Blog Site")
 
 # HOLD Web Site (GitHub Pages)
 
