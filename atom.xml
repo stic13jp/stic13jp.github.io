@@ -7,6 +7,7 @@
 <link href="https://stic13jp.github.io/atom.xml" rel="self"/>
 <updated>2026-11-11T03:00:00+09:00</updated>
 <id>https://stic13jp.github.io/</id>
+<media:thumbnail url="https://stic13jp.github.io/favicon.ico"/>
 <author>
 <name>STIC (stic13jp)</name>
 </author>
@@ -15,6 +16,7 @@
 <title>What's New</title>
 <link href="https://stic13jp.github.io/whatsnew.html"/>
 <id>https://stic13jp.github.io/whatsnew.html</id>
+<media:thumbnail url="https://stic13jp.github.io/favicon.ico"/>
 <updated>2026-11-11T03:00:00+09:00</updated>
 <published>2026-11-11T03:00:00+09:00</published>
 <summary>Update STIC's Profile.</summary>
