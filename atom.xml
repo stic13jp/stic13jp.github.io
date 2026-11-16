@@ -4,7 +4,7 @@
 	<subtitle>Hold is Obstreperous Liberal Domain</subtitle>
 	<link href="https://stic13jp.github.io/" />
 	<link href="https://stic13jp.github.io/atom.xml" rel="self" />
-	<updated>2026-11-14T01:30:00+09:00</updated>
+	<updated>2026-11-16T20:00:00+09:00</updated>
 	<id>https://stic13jp.github.io/</id>
 	<author>
 		<name>STIC (stic13jp)</name>
@@ -13,8 +13,16 @@
 		<title>What's New</title>
 		<link href="https://stic13jp.github.io/whatsnew.html" />
 		<id>https://stic13jp.github.io/whatsnew.html</id>
-		<updated>2026-11-14T01:30:00+09:00</updated>
-		<published>2026-11-14T01:30:00+09:00</published>
-		<summary>Update STIC's Profile.</summary>
+		<updated>2026-11-16T20:00:00+09:00</updated>
+		<published>2026-11-16T20:00:00+09:00</published>
+		<summary>「よくわか34」の終了と「よくわか35」の開始。</summary>
+	</entry>
+	<entry>
+		<title>個人サイトとブログをHTTPS化</title>
+		<link href="https://stic13jp.github.io/yokuwaka/yk3501.html" />
+		<id>https://stic13jp.github.io/yokuwaka/yk3501.html</id>
+		<updated>2026-11-16T20:00:00+09:00</updated>
+		<published>2026-11-16T20:00:00+09:00</published>
+		<summary>個人サイトをGitHub Pagesへ、ブログのドメインを変更しただけ。</summary>
 	</entry>
 </feed>
