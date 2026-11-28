@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<link href="../default.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="../favicon.ico" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YOKUWAKA 35: 個人サイトとブログをHTTPS化 - HOLD Web Site</title>
+</head>
+<body>
+<h3><a id="yk3501">個人サイトとブログをHTTPS化</h3>
+<h4>ブログのデザインが古すぎる</h4>
+<p>
+　ブログ(<a href="http://blog.livedoor.jp/stic/">http://blog.livedoor.jp/stic/</a>)のデサインが古すぎるだろ、と思った。突然ではない。前々から自覚はしていた。わざとシンプルにしているところもあるのだが、それにしたって(以下略)。とゆーわけで、公式が用意しているテンプレートで似たような感じのものを選んで、font-familyプロパティだけ変えてみた。ついでに、RSSのリンクも設置してみた。ここで、そもそも個人サイトもブログもHTTPで、なんとか(ってなに?)したい、というだいぶ前からモヤモヤしていた話へ繋がる。個人サイトは<a href="https://stic13jp.github.io/">GitHub Pages</a>があるので、そっちにアクセスしてねって話なんだけど、はてさてブログはどうしたもんか。もしlivedoor Blogがサ終したら、どうするんだと。とゆーわけで、チャッピー(ChatGPT)に頼んでHugoへの移行を検証してみた。
+</p>
+<ol>
+<li>まず、livedoor Blog管理画面で全データをエクスポートする。とても残念なことに、このデータには画像ファイルが含まれない。</li>
+<li>ChatGPTに「Hugoへ移行したい」と伝えて変換してもらう。いわゆるバイブコーディングってやつ。</li>
+<li>画像ファイルを取得するPythonスクリプトも作ってもらう。それを使って画像ファイルを取得する。</li>
+<li>ChatGPTに変換してもらったファイルと取得した画像ファイルを適切なディレクトリへ配置して「hugo server」を実行する。</li>
+</ol>
+<p>
+　コンテンツの移行は全然問題なし。見た目はCSSを勝手にいじれってか←これも全然OK。カテゴリ別とか月別が厳しい。ここで気付く。HTTPS化するだけなら、livedoor.blogドメインに移行すればいいのでは? livedoor Blogは管理画面でアクセス解析できるが、自身のブログは見るだけムダというか無意味。UU(ユニーク・ユーザー)は毎日、0か1。1は自分自身のアクセスだ。一年に数回しか更新しないんだから、人が来ないのは当たり前。ところが、今年は2026/10/16まで二桁のUUが続いた。これって脆弱性スキャン? それわ(ママ)さておき、誰もアクセスしていないんだったらURLが変わっても問題なくね? とゆーわけでlivedoor.blogドメインへ変更してみた。ドメイン転送の設定もしてみたけど、自動的にチェックがONになったので実質なにもしていない。
+</p>
+<blockquote>
+<a href="https://stic.livedoor.blog/">https://stic.livedoor.blog/</a>
+</blockquote>
+<p>
+　「blog.livedoor.jp」がHTTPS化しないのは知ってた(＆予想していた)。
+</p>
+<blockquote>
+<a href="https://staff.livedoor.blog/archives/52010157.html">【完了】【5月中旬以降】提供サブドメインのHTTPS配信（常時SSL化）について</a>
+</blockquote>
+<p>
+　SNSのフォロワーのみなさんには釈迦に説法だが、HTTPのままだと色々アレでソレ。しかも、HTTPS化しないことに強いこだわりがあるわけでもない。
+</p>
+<blockquote>
+<a href="https://staff.livedoor.blog/archives/52025888.html">X（旧Twitter）などで「http://blog.livedoor.jp/」形式のブログが表示されない事象について</a>
+</blockquote>
+<p>
+　表示されないのはlivedoor自身の問題ではないし、HTTPSは世の中の流れでもある。移行手段が提示されていたし、まあ潮時だったのかな～(イミフ)。
+</p>
+<h4>RSSとAtom</h4>
+<p>
+　移行ついでにRSSを確認してみたところ、livedoor Blogは以下のURLでRSSを出力してくれていた。
+</p>
+<blockquote>
+<a href="https://stic.livedoor.blog/index.rdf">https://stic.livedoor.blog/index.rdf</a>
+</blockquote>
+<p>
+　個人サイトはAtomにしてみよう。自動で出力させる仕組みなんて、自分にはわからない。更新頻度がとても低いので、手書きしてみた。
+</p>
+<blockquote>
+<a href="../atom.xml">https://stic13jp.github.io/atom.xml</a>
+</blockquote>
+<p>
+　<a href="https://www.inoreader.com/ja/rss-feed-validator">RSSフィード検証ツール</a>で確認したら、そもそもフォーマットとしてダメだった(Atomを手書きなんかするから……)。といっても勝手にHTTPSに書き換えた(ハルシネーションだと思い込んでいた。スマン&gt;Gemini)部分が原因だったので、XML名前空間のURIを元に戻しただけ。
+</p>
+<p>
+　RSS/Atomを用意しておいてナンだけど、利用しているケースって限定的というか一部の人達だけ、というイメージ(偏見です)。自分自身は、RSSリーダーどころかWebページ更新チェッカーも使わなかったぐらい。WWWCがメジャーなとき、なんか合わなくて<a href="https://github.com/koizuka/wwwd">WWWD</a>を使っていたのだが、それさえも使わなくなった。どうしていたのかというと、手動で巡回していた。更新がなかったときは残念に感じたけど、手動巡回そのものは苦ではなかった。それぞれの巡回先Webサイトのデザインを毎回見るのも楽しかった。自分自身のWebサイトのデザインは世の中的にはショボかったけど、"やりたいこと"と"できること"の論理積で納得していた。
+</p>
+<p>
+　だからRSSリーダーが登場したとき、Webデザインを無視してコンテンツだけ読まれる、ということに抵抗を感じた。他人はコントロールできないので仕方ないけど、自分はやらない。とはいえ更新チェックそのものを否定するつもりはない。更新されているのがわかったら、Webサイトへアクセスする。全然OK。とゆー流れ(?)で、はてなアンテナを使いはじめた……のだが、結局手動巡回に戻ってしまった。企業サイトはほぼ毎日更新されるし、個人サイトは長期間更新されなくなったら"さようなら"だ。特に後者は「ホームページ→ブログ→Twitter」という一方通行というか、行ったっきり戻ってこないのがほとんどだった。これは特にブログから書きはじめて、なぜか空行をいっぱい入れる人達に多かったようなイメージ(偏見です)。
+</p>
+<h4>エクスキューズ</h4>
+<p>
+　いやいや、ちょっと待て。「個人サイトとブログをHTTPS化した」ってタイトルなら、独自ドメインを取得してSSL証明書を発行してもらって、それを如何にして設定したのか……って、そーゆー内容が普通でしょ!? とお思いの貴方。まあソレは全然否定しませんが、そんな大変なことばっかりではなくて、こーゆーHTTPS化もあるよ……と思っていただければ。とわいへ(ママ)、さすがにこれは<a href="../tech/index.html">Technical Note</a>に書くレベルぢゃね～な～、とゆーわけで「<a href="../yokuwaka/index.html">よくわか</a>」に書きますよっと。
+</p>
+# 2026/11/16
+<hr />
+<a href="../index.html">Back to Top Page</a>
+</body>
+</html>
